@@ -42,8 +42,11 @@
 }
 .searchBar{
     border: none;
+    width: 355px;
     background-color: rgb(238, 236, 236);
     border-radius: 60px;
+    overflow-x: visible;
+    
 }
 .searchButton{
     border-top-right-radius: 60px;
