@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router'
 import styles from '../styles/Menu.module.css'
 import Image from 'next/image';
-import logo from '../public/img/AnimagoLogo.png'
+import Logo from '../public/img/AnimagoLogo.png'
 
 export default function Menu() {
     const router = useRouter()
@@ -10,7 +10,7 @@ export default function Menu() {
         <div className={styles.menu}>
             <div>
                 <div> <a onClick={() => router.push('/Accueil')}>
-                <Image src={logo} alt='lien pour Accueil' className={styles.img} />
+                <Image src={Logo} alt='lien pour Accueil' className={styles.imgLogo} />
                 </a></div>
             </div>
 
@@ -21,10 +21,6 @@ export default function Menu() {
                 <div className={styles.menuProductList} onClick={() => router.push('/oiseau')}>OISEAUX</div>
                 <div className={styles.menuProductList} onClick={() => router.push('/aquatique')}>AQUATIQUE</div>
                 <div className={styles.menuProductList} onClick={() => router.push('/petitanimaux')}>PETIT ANIMAUX</div>
-            </div>
-            <div className={styles.menuLogo}>
-                <div className={styles.menuProductList}>Login ICI</div>
-                <div className={styles.menuProductList}>Panier ICI</div>
             </div>
         </div>
     )
