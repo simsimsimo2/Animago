@@ -42,11 +42,12 @@
 }
 .searchBar{
     border: none;
-    width: 355px;
     background-color: rgb(238, 236, 236);
-    border-radius: 60px;
-    overflow-x: visible;
-    
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
 }
 .searchButton{
     border-top-right-radius: 60px;
@@ -54,13 +55,21 @@
     background-color: rgb(255, 68, 27);
     height: 30px;
     width: 55px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     border: none;
+    margin: 0;
 }
 .searchLogo{
     width: 25px;
     height: auto;
+    margin: auto;
 }
+.searchButton:hover{
+    cursor: pointer;
+}
+
 .header2{
     display: flex;
     flex-direction: row;

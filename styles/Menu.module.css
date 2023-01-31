@@ -11,22 +11,26 @@
 }
 
 .menuProductList{
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
+    margin-top: 4rem;
+    height: fit-content;
     align-items: center;
     cursor: pointer;
 }
 
 .menuProductList:hover {
     background-color: #f1f1f1;
+    color: rgb(248, 110, 60);
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
 }
 
 .menuLogo{
     display: flex;
 }
 .img {
-    width: 200px;
-    height: 200px;
-    margin: 0 10px;
+    width: 150px;
+    height: auto;
+    margin: auto ;
     cursor: pointer;
   }
