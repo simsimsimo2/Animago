@@ -3,18 +3,21 @@
     flex-direction: row;
     justify-content: space-between;
     font-size: large;
-    line-height: 1.5;
+    line-height: 2;
     
 }
 
 .adresseContact{
     padding-top: 2rem;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .bodyContact{
-    margin: 8rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top: 1rem;
+    margin-bottom: 8rem;
 }
 
 .horaire{

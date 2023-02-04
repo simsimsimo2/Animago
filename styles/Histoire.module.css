@@ -9,13 +9,21 @@
 .histoire{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width:auto;
     font-size: large;
-    line-height: 1.8;
+    line-height: 2;
+    padding-bottom: 5rem;
+}
+
+.contenu{
+    padding-right: 2rem;
 }
 
 .bodyHistoire{
-    margin: 8rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top: 1rem;
+    margin-bottom: 8rem;
 }
 
 .imgResize {
