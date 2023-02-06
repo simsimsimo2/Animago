@@ -16,12 +16,19 @@
     font-weight: bold;
 }
 
+.aLogin{
+    color: rgb(254, 59, 0);
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
 .nomAnimago{
     font-size: 35px;
     color: rgb(254, 59, 0);
     font-family: 'Helvetica';
     font-weight: bold;
     margin: 0;
+    cursor: pointer;
 }
 .iconReseaux{
     width: 30px;
@@ -29,6 +36,10 @@
     cursor: pointer;
     margin-right: 1rem;
     padding: 0;
+}
+
+.iconReseaux:hover{
+    transform: rotate(10deg);
 }
 .catchPhrase{
     display: flex;
@@ -59,11 +70,15 @@
     margin: auto;
 }
 .menuProductList{
-    margin: 1rem;
-    margin-top: 0.5rem;
+    display: flex;
+    margin: 0.9rem 0.7rem;
     height: fit-content;
     align-items: center;
     cursor: pointer;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
 }
 .menuLogo{
     display: flex;
@@ -131,4 +146,8 @@
     margin: 0;
     cursor: pointer;
     padding: 0;
+}
+
+.loginCart:hover{
+    transform: rotate(8deg);
 }

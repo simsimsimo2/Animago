@@ -21,22 +21,22 @@ return <footer className={styles.footer}>
                     </div>
                     <div className={`${styles.catchPhrase} ${styles.containerP}`}> 
                         <h3 className={styles.h3}>Boutique</h3>
-                        <button className={styles.menuProductList} onClick={() => router.push('/chien')}>Chiens</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/chat')}>Chats</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/oiseau')}>Oiseaux</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/aquatique')}>Poissons et Aquatiques</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/petitanimaux')}>Petit Animaux</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/reptile')}>Reptiles</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/chien')}>Chiens</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/chat')}>Chats</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/oiseau')}>Oiseaux</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/aquatique')}>Poissons et Aquatiques</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/petitanimaux')}>Petit Animaux</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/reptile')}>Reptiles</button>
                     </div>
                     <div className={`${styles.catchPhrase} ${styles.containerP}`}> 
                         <h3 className={styles.h3}>Info</h3>
-                        <button className={styles.menuProductList} onClick={() => router.push('/histoire')}>Notre histoire</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/contact')}>Contact</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/expeditionRetours')}>Expedition & retours</button>
-                        <button className={styles.menuProductList} onClick={() => router.push('/politique')}>Politique du magasin</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/histoire')}>Notre histoire</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/contact')}>Contact</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/expeditionRetours')}>Expedition & retours</button>
+                        <button className={styles.menuFooterList} onClick={() => router.push('/politique')}>Politique du magasin</button>
                     </div>
                 </div>
-                <h3 className={`${styles.catchPhrase} ${styles.containerP}`}>RESTER CONNECTÉ</h3>
+                <h3 className={`${styles.catchPhrase} ${styles.containerP}`}>RESTER CONNECTÉ AVEC NOUS</h3>
                 <div className={styles.catchPhrase}>
                 <a onClick={() => router.push("https://facebook.com")}>
                 <Image src={facebook} alt='lien pour facebook' className={styles.img} />

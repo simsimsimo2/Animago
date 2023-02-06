@@ -3,27 +3,21 @@
     color: rgb(254, 59, 0);
     font-weight: bold;
     align-items:flex-start;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .histoire{
-    display: flex;
-    flex-direction: row;
-    width:auto;
     font-size: large;
-    line-height: 2;
-    padding-bottom: 5rem;
-}
-
-.contenu{
-    padding-right: 2rem;
+    line-height: 1.8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 5rem;
+    margin: 1rem 0;
 }
 
 .bodyHistoire{
-    margin-left: 15rem;
-    margin-right: 15rem;
-    margin-top: 1rem;
-    margin-bottom: 8rem;
+    margin: 5rem 15rem;
 }
 
 .imgResize {

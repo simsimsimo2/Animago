@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Menu from './Menu';
 import styles from '../styles/Header.module.css'
 import Image from 'next/image'
@@ -10,6 +11,7 @@ import Login from '../public/img/login.png'
 import Cart from '../public/img/cart.png'
 
 export default function Header(){
+    const router = useRouter()
     return <header>
         <div className={styles.headerLivraison}>
             <p className={styles.p}>
@@ -17,7 +19,7 @@ export default function Header(){
             </p>
         </div>
         <div className={`${styles.divRow}`}>
-            <p className={styles.nomAnimago}>ANIMAGO!</p>
+            <p className={styles.nomAnimago} onClick={() => router.push('/Accueil')}>ANIMAGO!</p>
             <div className={`${styles.top}`}>
                 <form className={styles.searchForm}> 
                     <input type="search" id="query" name="q" placeholder="Search..." className={styles.searchBar}/>
@@ -37,13 +39,13 @@ export default function Header(){
         </div>  
         <div className={styles.header2}>
             <div className={styles.catchPhrase}>
-                <a href="https://facebook.com">
-                    <Image src={facebook} alt='lien pour facebook' className={styles.iconReseaux} />
+                <a onClick={() => router.push("https://facebook.com")}>
+                    <Image src={facebook} alt='lien pour facebook' className={styles.iconReseaux}  />
                 </a>
-                <a href="https://instagram.com">
+                <a onClick={() => router.push("https://instagram.com")}>
                     <Image src={instagram} alt='lien pour instagram' className={styles.iconReseaux} />
                 </a>
-                <a href="https://youtube.com">
+                <a onClick={() => router.push("https://youtube.com")}>
                     <Image src={youtube} alt='lien pour twitter' className={styles.iconReseaux} />
                 </a>
                 <p className={styles.p}>
@@ -53,10 +55,16 @@ export default function Header(){
             
             <div className={styles.menuLogo}>
                 <div className={styles.menuProductList}>
+                    <a className={styles.aLogin}onClick={() => router.push("/Inscription")}>
                     <Image src={Login} alt='lien pour se connecter' className={styles.loginCart} />
+                    </a>
+                    <a className={styles.aLogin} onClick={() => router.push("/Connexion")}>Connexion</a>
+                    <a className={styles.aLogin}onClick={() => router.push("/Inscription")}>Inscription</a>
                 </div>
                 <div className={styles.menuProductList}>
+                    <a onClick={() => router.push("/Cart1")}>
                     <Image src={Cart} alt='lien pour se connecter' className={styles.loginCart} />
+                    </a>
                 </div>
             </div>
         </div>
