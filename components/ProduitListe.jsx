@@ -1,11 +1,12 @@
-import ProduitItem from '../components/ProduitItem';
-import styles from '../styles/ProduitListe.module.css';
 
-export default function ProduitListe() {
+import styles from '../styles/ProduitListe.module.css';
+import ProduitCard from "./ProduitCard";
+
+export default function ProduitListe(categorieNameSelectionne) {
     return (
     <>
         <div className={styles.container}>
-            <ProduitItem />
+                <ProduitCard />
         </div>
     </>
     );
