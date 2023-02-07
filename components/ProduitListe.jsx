@@ -1,12 +1,11 @@
-
 import styles from '../styles/ProduitListe.module.css';
-import ProduitCard from "./ProduitCard";
+import ProduitData from "./ProduitData";
 
-export default function ProduitListe(categorieNameSelectionne) {
+export default function ProduitListe({ categorie }) {
     return (
     <>
         <div className={styles.container}>
-                <ProduitCard />
+                <ProduitData categorie={categorie} />
         </div>
     </>
     );

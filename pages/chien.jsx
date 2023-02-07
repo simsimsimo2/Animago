@@ -12,7 +12,7 @@ export default function Chien() {
       <Categorie />
         <main>
         <h1 className={styles.h1}>Chiens</h1>
-        <ProduitListe />
+        <ProduitListe categorie="chien"/>
         </main>
       <Footer/>
     </>

@@ -59,4 +59,40 @@
     color: black;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   }
+
+  .imageInfo{
+    display: flex;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: stretch;
+    justify-content: center;
+    margin: 1rem 1rem;
+  }
+
+  .imageId{
+    font-size: 1.3em;
+    color:#ff8a00;
+    margin: .5rem 0;
+  }
+  .imageName{
+    font-size: 1.6em;
+    color:rgb(254, 59, 0);
+    margin: .5rem 0;
+  }
+
+  .imagePrice{
+    font-size: 1.5em;
+    color:rgb(128, 128, 128);
+    margin: .5rem 0;
+  }
+
+  .imageStock{
+    font-size: 1.2em;
+    color:black;
+    margin: .5rem 0;
+  }
+
   
