@@ -5,7 +5,6 @@ export default function Categorie(props) {
     const router = useRouter()
     return (
         <div className={styles.menuCategorie}>
-            <h2 className={styles.h2Categorie} >Choisissez une catégorie:</h2>
             <button className={styles.button} onClick={() => router.push('/toutMagasiner')}>TOUT MAGASINER</button>
             <button className={styles.button} onClick={() => router.push('/chien')}>CHIENS</button>
             <button className={styles.button} onClick={() => router.push('/chat')}>CHATS</button>
