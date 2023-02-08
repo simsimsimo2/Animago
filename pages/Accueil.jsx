@@ -13,7 +13,7 @@ export default function Accueil({images}) {
     <Header/>
       <main>
         <Image src={ImagePrincipal} alt='Image principale pour vente de produit animalier' className={styles.imgPrincipale}/>
-        <Gallerie/>
+        <Gallerie className={styles.imgGrid}/>
       </main>
     <Footer/>
   </>

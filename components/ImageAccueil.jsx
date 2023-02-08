@@ -1,22 +1,14 @@
 import Gallerie from './Gallerie'
 
+
 export default function Image(){
     const images = [
-        { src: 'https://img.pokemondb.net/artwork/bulbasaur.jpg', alt: 'Bulbasaur', width: 360, height: 336 },
-        { src: 'https://img.pokemondb.net/artwork/drifloon.jpg', alt: 'Drifloon' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/bellossom.jpg', alt: 'Bellossom', width: 360, height: 336 },
-        { src: 'https://img.pokemondb.net/artwork/staravia.jpg', alt: 'Staravia', width: 360, height: 336 },
-        { src: 'https://img.pokemondb.net/artwork/zebstrika.jpg', alt: 'Zebstrika' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/vector/jellicent-female.png', alt: 'Jellicent' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/chandelure.jpg', alt: 'Chandelure' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/vector/fletchinder.png', alt: 'Fletchinder' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/vector/honedge.png', alt: 'Honedge' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/alt/litten-usum.jpg', alt: 'Litten' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/alt/mimikyu-alt1.jpg', alt: 'Mimikyu' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/alt/sobble-alt.jpg', alt: 'Sobble', width: 360, height: 336 },
-        { src: 'https://img.pokemondb.net/artwork/sirfetchd.jpg', alt: 'Sirfetch\'d' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/alt/pikachu-alt1.jpg', alt: 'Pikachu' , width: 360, height: 336},
-        { src: 'https://img.pokemondb.net/artwork/original/umbreon-gen2.jpg', alt: 'Umbreon' , width: 360, height: 336}
+        { src: '/img/Chien.jpg', alt: 'Chien', width: 300, height: 400, categorie: "Chien" },
+        { src: '/img/Chat.jpg', alt: 'Chat' , width: 300, height: 400, categorie: "Chat"},
+        { src: '/img/Oiseaux.jpg', alt: 'Oiseaux', width: 300, height: 400 , categorie: "Oiseaux"},
+        { src: '/img/Petit_animaux.jpg', alt: 'Petit animaux', width: 300, height: 400, categorie: "Petit animaux" },
+        { src: '/img/Poisson.jpg', alt: 'Poisson' , width: 300, height: 400, categorie: "Poisson"},
+        { src: '/img/Reptile.jpg', alt: 'Reptile' , width: 300, height: 400, categorie: "Reptile"}
     ];
     return<>
     <Gallerie images={images}/>

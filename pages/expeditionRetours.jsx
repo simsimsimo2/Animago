@@ -8,7 +8,6 @@ import Categorie from '../components/Categorie';
 export default function Expedition() {
     return <>
       <Header />
-      <Categorie />
         <main className={styles.bodyExpedition}>
           <div className={styles.contenuExpedition}>
             <h1 className={styles.titreExpedition}>Expédition & Retours</h1>

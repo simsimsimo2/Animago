@@ -9,7 +9,6 @@ import styles from '../styles/ProduitListe.module.css';
 export default function Chat() {
     return <>
       <Header/>
-      <Categorie />
         <main>
         <h1 className={styles.h1}>Chats</h1>
         <ProduitListe categorie="chat"/>

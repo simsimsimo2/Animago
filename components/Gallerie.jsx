@@ -3,12 +3,20 @@ import Image from 'next/image'
 
 export default function Gallerie({images}) {
     return <div className={`${styles.gallerie}`}>
-        {images.map((abc, index) => 
+        {images.map((imageData, index) => 
+        <div className={`${styles.container}`}>
+
             <Image 
-            src={abc.src} 
-            alt={abc.alt} 
-            width={abc.width} 
-            height={abc.height}/>
+            src={imageData.src} 
+            alt={imageData.alt} 
+            width={imageData.width} 
+            height={imageData.height}
+            /*onClick={() => router.push(`/produit/${_id}`)}*/
+            />
+            <p className={`${styles.text}`}>{imageData.categorie}</p>
+            <button className={`${styles.button}`}>Achetez maintenant</button>
+        </div>
+            
         )}
     </div>
 }

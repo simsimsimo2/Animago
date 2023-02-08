@@ -6,3 +6,9 @@
     background-repeat: no-repeat;
     object-fit: cover;
 }
+
+.imgGrid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
