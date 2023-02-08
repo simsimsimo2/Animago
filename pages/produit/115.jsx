@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit115() {
     const productId = 115;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Aqueon Kit de démarrage pour aquarium avec éclairage LED."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

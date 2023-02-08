@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit101() {
     const productId = 101;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Cabanes à oiseaux suspendues pour l'extérieur Millwood Pines, cabanes à oiseaux décoratives peintes à la main pour l'extérieur"
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

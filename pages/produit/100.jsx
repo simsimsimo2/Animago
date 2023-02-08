@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit100() {
     const productId = 100;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Cette élégante réplique de décoration Coral Cave par Underwater Treasures est la réplique parfaite pour donner du caractère à n'importe quel aquarium."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

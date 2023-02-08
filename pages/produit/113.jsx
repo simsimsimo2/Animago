@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit113() {
     const productId = 113;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Conteneur de bain en acrylique pour hamster - Salle de douche et de creuser - Pour souris, gerbilles"
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

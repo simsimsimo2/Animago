@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit114() {
     const productId = 114;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Mangeoire à oiseaux, [2023] Caméra d'observation des oiseaux sans fil alimentée par piles, capture automatique de vidéo et notification des oiseaux détectés, nichoir à oiseaux avec caméra, mangeoire Oiseaux extérieur (Birdfy Lite + solaire)."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

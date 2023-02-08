@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit106() {
     const productId = 106;
-    const productDescription  = "blablalblala"
+    const productDescription  = "ALPO est synonyme de vrais chiens partout en leur donnant le goût de viande qu'ils veulent et la nutrition dont ils ont besoin. Tout en offrant une saveur et une variété exceptionnelles pour rendre les repas que votre chien aura hâte."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

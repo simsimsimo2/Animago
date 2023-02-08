@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit104() {
     const productId = 104;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Aidez votre chat à lutter contre l'ennui et à maintenir des griffes en pleine santé, avec ce poteau simple et facile à transporter."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

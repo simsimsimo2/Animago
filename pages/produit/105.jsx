@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit105() {
     const productId = 105;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Les biscuits pour chien Milk Bone Original sont emballés avec un bon goût et une bonne santé pour donner à votre chien des dents plus propres et une haleine plus fraîche. Disponible en S, M, L et XL."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

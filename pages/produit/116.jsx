@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit116() {
     const productId = 116;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Tetra Flocons de poisson rouge, nourriture facile à digérer, 200 g"
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

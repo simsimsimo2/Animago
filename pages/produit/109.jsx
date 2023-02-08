@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit109() {
     const productId = 109;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Disponibles dans une variété de modèles, ces cages sont conçues pour accueillir votre petit animal de compagnie dans un confort total. L'assemblage rapide et sans outil vous permet de l'installer en quelques minutes."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

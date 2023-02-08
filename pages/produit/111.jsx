@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit111() {
     const productId = 111;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Humidificateurs pour terrariums et terrariums Taille 3 L Parfait pour divers reptiles/amphibiens/herps/paludarium/vivarium."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

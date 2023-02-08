@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit110() {
     const productId = 110;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Tank de dragon barbu, réservoir de grenouille, cage de dragon barbu, Accessoires de dragon barbu, décoration de terrarium, accessoires de réservoir de gecko, boules de dragon, décoration de reptile."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

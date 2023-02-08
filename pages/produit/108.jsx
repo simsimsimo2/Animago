@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit108() {
     const productId = 108;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Le lit rond pour animal de compagnie offre un endroit sûr et confortable pour un chat ou un petit chien pour dormir."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 

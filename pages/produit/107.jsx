@@ -5,7 +5,7 @@ import ProductDetails from "/components/ProduitDetails.jsx";
 
 export default function Produit107() {
     const productId = 107;
-    const productDescription  = "blablalblala"
+    const productDescription  = "Graine de tournesol à écale noire riche en huile."
     const router = useRouter();
     const product = ProduitData({categorie: null}).props.children.props.images.find(({_id}) => _id === productId);
 
