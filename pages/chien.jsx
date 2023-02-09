@@ -9,6 +9,7 @@ import styles from '../styles/ProduitListe.module.css';
 export default function Chien() {
     return <>
       <Header/>
+      <Categorie />
         <main>
         <h1 className={styles.h1}>Chiens</h1>
         <ProduitListe categorie="chien"/>

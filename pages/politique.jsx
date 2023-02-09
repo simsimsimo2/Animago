@@ -8,6 +8,7 @@ import Categorie from '../components/Categorie';
 export default function Politque() {
     return <>
       <Header />
+      <Categorie />
         <main className={styles.bodyPolitique}>
           <div className={styles.contenuPolitique}>
             <h1 className={styles.titrePolitique}>Politique du Magasin</h1>

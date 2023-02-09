@@ -9,6 +9,7 @@ import styles from '../styles/ProduitListe.module.css';
 export default function Aquatique() {
     return <>
       <Header/>
+      <Categorie />
         <main>
         <h1 className={styles.h1}>Aquatique</h1>
         <ProduitListe categorie="aquatique"/>

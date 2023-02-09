@@ -8,13 +8,14 @@ import Gallerie from '../components/ImageAccueil';
 import ImagePrincipal from '../public/img/image_accueil.png'
 import Image from 'next/image'
 
-export default function Accueil({images}) {
-  return <>
-    <Header/>
-      <main>
-        <Image src={ImagePrincipal} alt='Image principale pour vente de produit animalier' className={styles.imgPrincipale}/>
-        <Gallerie className={styles.imgGrid}/>
-      </main>
-    <Footer/>
-  </>
-}
+export default function Accueil() {
+    return <>
+      <Header/>
+      <Categorie />
+        <main>
+          <Image src={ImagePrincipal} alt='Image principale pour vente de produit animalier' className={styles.imgPrincipale}/>
+          <Gallerie className={styles.imgGrid}/>
+        </main>
+      <Footer/>
+    </>
+  }

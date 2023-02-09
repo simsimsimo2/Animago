@@ -9,6 +9,7 @@ import styles from '../styles/ProduitListe.module.css';
 export default function PetitAnimaux() {
     return <>
       <Header/>
+      <Categorie />
         <main>
         <h1 className={styles.h1}>Petit Animaux</h1>
         <ProduitListe categorie="petit animaux"/>
