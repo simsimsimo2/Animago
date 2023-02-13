@@ -8,11 +8,11 @@ const PanierPanneauFooter = ({ closePanel, router }) => {
   };
 
   return (
-    <footer className={styles.footer}>
+    <div className={styles.footer}>
       <button className={styles.boutonVoirPanier} onClick={handleViewCartClick}>
         Voir le panier
       </button>
-    </footer>
+    </div>
   );
 };
 

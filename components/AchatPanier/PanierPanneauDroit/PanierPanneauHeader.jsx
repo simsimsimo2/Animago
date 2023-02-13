@@ -10,7 +10,7 @@ function PanierPanneauHeader({ router }) {
   };
 
   return (
-    <header className={styles.header}>
+    <div className={styles.header}>
       <button className={`${styles.bouton} ${styles.close}`} onClick={handleGoBackClick}>
         <Image
           src={CloseIcon}
@@ -19,7 +19,7 @@ function PanierPanneauHeader({ router }) {
         />
       </button>
       <h2 className={styles.title}>Panier</h2>
-    </header>
+    </div>
   );
 }
 

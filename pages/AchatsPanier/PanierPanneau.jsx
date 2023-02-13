@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import styles from '/styles/Cart.module.css';
 import produits from '/models/produits.jsx';
 import { Produitsdisponibles } from '/components/AchatPanier/Produitsdisponibles';
@@ -94,7 +92,6 @@ export default function PanierPanneau() {
 
   return (
     <>
-      <Header />
       <div className={`right-side-panel${isOpen ? " open" : ""}`} onClick={closePanel}>
         <div className="right-side-panel-content" onClick={(e) => e.stopPropagation()}>
           <div className={styles.cart}>
@@ -118,7 +115,6 @@ export default function PanierPanneau() {
         </div>
         <PanierPanneauFooter closePanel={closePanel} router={router} />
       </div>
-      <Footer />
     </>
   );
 }  

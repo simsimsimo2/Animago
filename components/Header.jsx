@@ -9,6 +9,8 @@ import youtube from '../public/img/youtube.svg';
 import search from '../public/img/search.png';
 import Login from '../public/img/login.png';
 import Cart from '../public/img/cart.png';
+import Toggler from './Toggler';
+import PanierPanneau from '@/pages/AchatsPanier/PanierPanneau';
 
 export default function Header() {
     const [query, setQuery] = useState("");
@@ -23,6 +25,12 @@ export default function Header() {
         router.push(`/produit/${query}`);
         console.log(`Searching for: ${query}`);
     };
+    const [visibleState, setVisible] = useState(0);
+
+    const toggler = () => {
+        setVisible(!visibleState);
+        console.log(visibleState);
+    }
 
     return (
         <>
@@ -110,14 +118,19 @@ export default function Header() {
                             <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
                         </div>
                         <div className={styles.menuProductList}>
-                            <a onClick={() => router.push("/AchatsPanier/PanierPanneau")}>
+                            <a>
                                 <Image
                                     src={Cart}
                                     alt={'lien pour se connecter' || 'Default Image'}
                                     className={styles.loginCart}
                                     priority={true}
+                                    onClick={toggler} 
                                 />
                             </a>
+                            {visibleState &&
+                                    <PanierPanneau/>
+                            
+                            }
                         </div>
                     </div>
                 </div>
