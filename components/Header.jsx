@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'
-import Menu from './Menu';
+import Menu from './Menu/Menu';
 import styles from '../styles/Header.module.css'
 import Image from 'next/image'
 
@@ -25,7 +25,9 @@ export default function Header() {
         console.log(`Searching for: ${query}`);
       };
 
-    return <header>
+    return (
+    <>
+        <header>
         <div className={styles.headerLivraison}>
             <p className={styles.p}>
                 LIVRAISON GRATUITE - COMMANDEZ AUJOURD'HUI
@@ -34,20 +36,20 @@ export default function Header() {
         <div className={`${styles.divRow}`}>
             <p className={styles.nomAnimago} onClick={() => router.push('/Accueil')}>ANIMAGO!</p>
             <div className={`${styles.top}`}>
-            <form className={styles.searchForm} onSubmit={handleSubmit}>
-            <input
-              type="search"
-              id="query"
-              name="q"
-              placeholder="Chercher un produit..."
-              className={styles.searchBar}
-              value={query}
-              onChange={handleChange}
-            />
+                <form className={styles.searchForm} onSubmit={handleSubmit}>
+                    <input
+                        type="search"
+                        id="query"
+                        name="q"
+                        placeholder="Chercher un produit..."
+                        className={styles.searchBar}
+                        value={query}
+                        onChange={handleChange}
+                    />
                     <button className={styles.searchButton} type="submit">
-              <Image src={search} className={styles.searchLogo} />
-            </button>
-          </form>
+                        <Image src={search} className={styles.searchLogo} />
+                    </button>
+                </form>
                 <div className={`${styles.appelezNous}`}>
                     <p className={styles.p}>
                         Appelez-nous
@@ -57,17 +59,17 @@ export default function Header() {
                     </p>
                 </div>
             </div>
-        </div>  
+        </div>
         <div className={styles.header2}>
             <div className={styles.catchPhrase}>
                 <a onClick={() => router.push("https://facebook.com")}>
-                    <Image src={facebook} alt='lien pour facebook' className={styles.iconReseaux}  />
+                    <Image src={facebook} alt={'lien pour facebook'|| 'Default Image'} className={styles.iconReseaux} />
                 </a>
                 <a onClick={() => router.push("https://instagram.com")}>
-                    <Image src={instagram} alt='lien pour instagram' className={styles.iconReseaux} />
+                    <Image src={instagram} alt={'lien pour instagram' || 'Default Image'} className={styles.iconReseaux} />
                 </a>
                 <a onClick={() => router.push("https://youtube.com")}>
-                    <Image src={youtube} alt='lien pour twitter' className={styles.iconReseaux} />
+                    <Image src={youtube} alt={'lien pour twitter'|| 'Default Image'} className={styles.iconReseaux} />
                 </a>
                 <p className={styles.p}>
                     Vos article préféré pour vos animaux préféré
@@ -76,19 +78,21 @@ export default function Header() {
             
             <div className={styles.menuLogo}>
                 <div className={styles.menuProductList}>
-                    <a className={styles.aLogin}onClick={() => router.push("/Inscription")}>
-                    <Image src={Login} alt='lien pour se connecter' className={styles.loginCart} />
+                    <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>
+                        <Image src={Login} alt={'lien pour se connecter' || 'Default Image'} className={styles.loginCart} />
                     </a>
-                    <a className={styles.aLogin} onClick={() => router.push("/Connexion")}>Connexion</a>
-                    <a className={styles.aLogin}onClick={() => router.push("/Inscription")}>Inscription</a>
+                    <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Connexion")}>Connexion</a>
+                    <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
                 </div>
                 <div className={styles.menuProductList}>
-                    <a onClick={() => router.push("/Cart1")}>
-                    <Image src={Cart} alt='lien pour se connecter' className={styles.loginCart} />
+                    <a onClick={() => router.push("/AchatsPanier/PanierPanneau")}>
+                        <Image src={Cart} alt={'lien pour se connecter' || 'Default Image'} className={styles.loginCart} />
                     </a>
                 </div>
             </div>
         </div>
         <Menu />
-    </header>
+            </header>
+            </>       
+    );
 }
