@@ -78,9 +78,11 @@ export default function Header() {
             
             <div className={styles.menuLogo}>
                 <div className={styles.menuProductList}>
-                    <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>
+                    <a onClick={() => router.push("/InscriptionConnexion/Inscription")}>
                         <Image src={Login} alt={'lien pour se connecter' || 'Default Image'} className={styles.loginCart} />
                     </a>
+                </div>
+                <div className={styles.menuProductList}>
                     <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Connexion")}>Connexion</a>
                     <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
                 </div>

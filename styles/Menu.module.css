@@ -18,6 +18,7 @@
 }
 .imgLogo {
     width: 125px;
+    min-width: 125px;
     height: auto;
     margin: 1rem;
     cursor: pointer;
@@ -34,4 +35,10 @@
     margin: 0;
     cursor: pointer;
     transform: translateY(-70px);
+}
+@media (max-width: 550px) {
+    .imgLogo{
+        width: 90px;
+        min-width: 90px;
+    }
 }
