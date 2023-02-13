@@ -18,12 +18,8 @@
 
 .aLogin{
     color: rgb(254, 59, 0);
-    margin: 0.3rem 1rem;
+    margin: 0 1rem;
     cursor: pointer;
-}
-.aLogin:hover{
-    text-decoration: underline;
-    transition: 0.3s ease-in-out;
 }
 
 .nomAnimago{
@@ -36,7 +32,6 @@
 }
 .iconReseaux{
     width: 30px;
-    min-width: 30px;
     height: auto;
     cursor: pointer;
     margin-right: 1rem;
@@ -78,7 +73,7 @@
 .menuProductList{
     display: flex;
     margin: 0.9rem 0.7rem;
-    height: 4rem;
+    height: fit-content;
     align-items: center;
     cursor: pointer;
     flex-wrap: wrap;
@@ -91,7 +86,7 @@
     justify-content: center;
     padding: 0;
     margin: 0;
-    height: 4rem;
+    height: fit-content;
 }
 
 .searchBar{
@@ -152,8 +147,7 @@
     justify-content: space-around;
 }
 .loginCart {
-    min-width: 40px;
-    width: 40px;
+    width: 35px;
     height: auto;
     margin: 0;
     cursor: pointer;
@@ -163,25 +157,4 @@
 .loginCart:hover{
     transform: rotate(8deg);
     transition: 0.3s ease-in-out;
-}
-
-@media (max-width: 550px) {
-    .loginCart{
-        width: 25px;
-        min-width: 25px;
-    }
-    .searchBar{
-        width: 70%;
-    }
-    .searchForm{
-        width: 150px;
-    }
-    .nomAnimago{
-        font-size: 20px;
-        margin: auto;
-    }
-    .iconReseaux{
-        width: 25px;
-        min-width: 25px;
-    }
 }

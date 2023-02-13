@@ -24,7 +24,7 @@
 
 .h2Categorie{
     font-weight: 500;
-    margin: 1rem 1rem;
+    margin: 1rem 0;
     line-height: 1.25;
 }
 
@@ -46,12 +46,3 @@
     color: black; 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
 } 
-
-@media (max-width: 550px) {
-    .h2Categorie{
-        font-size: larger;
-    }
-    .button{
-        font-size: 10px;
-    }
-}

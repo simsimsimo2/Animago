@@ -36,9 +36,9 @@
     font-weight: 400;
     line-height: 1.5;
     max-height: 60%;
-    max-width: 15rem;
+    max-width: 28%;
     min-height: 100%;
-    min-width: 15rem;
+    min-width: 28%;
     overflow: auto;
     transform: translateX(0%);
     transition: transform 0.5s ease-in-out;   
@@ -80,7 +80,7 @@
 .title {
     display: flex;
     font-size: 2.7rem;
-    margin: 0 0 2rem 2rem;
+    margin: 0 13rem;
     color: #FE3B00;
     align-items: center;
     justify-content: center;
