@@ -9,7 +9,6 @@ import youtube from '../public/img/youtube.svg';
 import search from '../public/img/search.png';
 import Login from '../public/img/login.png';
 import Cart from '../public/img/cart.png';
-import Toggler from './Toggler';
 import PanierPanneau from '@/pages/AchatsPanier/PanierPanneau';
 
 export default function Header() {
@@ -25,6 +24,7 @@ export default function Header() {
         router.push(`/produit/${query}`);
         console.log(`Searching for: ${query}`);
     };
+
     const [visibleState, setVisible] = useState(0);
 
     const toggler = () => {
@@ -118,7 +118,7 @@ export default function Header() {
                             <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
                         </div>
                         <div className={styles.menuProductList}>
-                            <a>
+                        <a>
                                 <Image
                                     src={Cart}
                                     alt={'lien pour se connecter' || 'Default Image'}
