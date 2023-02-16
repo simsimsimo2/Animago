@@ -4,14 +4,11 @@ import PropTypes from 'prop-types';
 import styles from '/styles/Cart.module.css';
 import CloseIcon from '/public/img/FermerPanier.svg';
 
-function PanierPanneauHeader({ router }) {
-  const handleGoBackClick = () => {
-    router.back();
-  };
+function PanierPanneauHeader({ toggler }) {
 
   return (
     <div className={styles.header}>
-      <button className={`${styles.bouton} ${styles.close}`} onClick={handleGoBackClick}>
+      <button className={`${styles.bouton}`} onClick={toggler}>
         <Image
           src={CloseIcon}
           alt={"fermer panier" || 'Default Image'}
@@ -24,7 +21,7 @@ function PanierPanneauHeader({ router }) {
 }
 
 PanierPanneauHeader.propTypes = {
-  router: PropTypes.object.isRequired,
+  router: PropTypes.object
 };
 
 export default PanierPanneauHeader;

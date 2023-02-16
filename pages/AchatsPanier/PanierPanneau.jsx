@@ -7,11 +7,11 @@ import PanierPanneauFooter from '/components/AchatPanier/PanierPanneauDroit/Pani
 import PanierPanneauHeader from '/components/AchatPanier/PanierPanneauDroit/PanierPanneauHeader';
 import ContenuPanneauPanier from '/components/AchatPanier/PanierPanneauDroit/ContenuPanneauPanier';
 import { useCart } from '/components/AchatPanier/UseCart.jsx';
+import Toggler from '../../components/Toggler'
 
-export default function PanierPanneau() {
+export default function PanierPanneau({toggler}) {
   const [cart, initCart, addToCart, removeFromCart, setCart] = useCart();
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -22,8 +22,6 @@ export default function PanierPanneau() {
     calcTotal();
   }, [cart]);
 
-  const closePanel = () => setIsOpen(false);
-  const openPanel = () => setIsOpen(true);
 
   const handleChange = (item, value) => {
     if (Number.isInteger(value)) {
@@ -92,10 +90,13 @@ export default function PanierPanneau() {
 
   return (
     <>
-      <div className={`right-side-panel${isOpen ? " open" : ""}`} onClick={closePanel}>
+      <Toggler visible>
+      <div className={`right-side-panel`} >
         <div className="right-side-panel-content" onClick={(e) => e.stopPropagation()}>
           <div className={styles.cart}>
-            <PanierPanneauHeader router={router} />
+
+            <PanierPanneauHeader toggler={toggler} />
+
             <div className={styles.containerLayout}>
               <section className={styles.section}>
                 <ContenuPanneauPanier
@@ -107,14 +108,15 @@ export default function PanierPanneau() {
                   total={total}
                   submitCheckout={submitCheckout}
                   addToCart={addToCart}
-                />
+                  />
                 <Produitsdisponibles produits={produits} />
               </section>
             </div>
           </div>
+            <PanierPanneauFooter  router={router} />
         </div>
-        <PanierPanneauFooter closePanel={closePanel} router={router} />
       </div>
+    </Toggler>
     </>
   );
 }  

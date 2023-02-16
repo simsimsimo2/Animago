@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '/styles/Cart.module.css';
 
-const PanierPanneauFooter = ({ closePanel, router }) => {
+const PanierPanneauFooter = ({ router }) => {
   const handleViewCartClick = () => {
     router.push('/AchatsPanier/PanierPleinEcran');
   };

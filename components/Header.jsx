@@ -25,11 +25,10 @@ export default function Header() {
         console.log(`Searching for: ${query}`);
     };
 
-    const [visibleState, setVisible] = useState(0);
+    const [visibleState, setVisible] = useState();
 
     const toggler = () => {
         setVisible(!visibleState);
-        console.log(visibleState);
     }
 
     return (
@@ -118,7 +117,7 @@ export default function Header() {
                             <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
                         </div>
                         <div className={styles.menuProductList}>
-                        <a>
+                            <a>
                                 <Image
                                     src={Cart}
                                     alt={'lien pour se connecter' || 'Default Image'}
@@ -128,8 +127,7 @@ export default function Header() {
                                 />
                             </a>
                             {visibleState &&
-                                    <PanierPanneau/>
-                            
+                                <PanierPanneau toggler = {toggler}/>
                             }
                         </div>
                     </div>
