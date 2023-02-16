@@ -113,11 +113,13 @@ export default function Header() {
                                     priority={true}
                                 />
                             </a>
-                            <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Connexion")}>Connexion</a>
-                            <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
+                            <div>
+                                <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Connexion")}>Connexion</a>
+                                <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
+                            </div>
                         </div>
                         <div className={styles.menuProductList}>
-                            <a>
+                            <a className={styles.aLogin}>
                                 <Image
                                     src={Cart}
                                     alt={'lien pour se connecter' || 'Default Image'}
