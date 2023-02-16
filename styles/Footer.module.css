@@ -25,7 +25,7 @@
     
     .catchPhrase {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     width: auto;
     margin-top: 0;
     padding: 0;
