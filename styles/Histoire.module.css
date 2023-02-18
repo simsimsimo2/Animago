@@ -23,4 +23,19 @@
 .imgResize {
     height: auto;
     max-width: 100%;
+    min-width: 30rem;
+}
+@media (max-width: 700px) {
+    .titreHistoire{
+        font-size: 2rem;
+        margin: 1rem;
+    }
+    .bodyHistoire{
+        margin: auto;
+    }
+    .histoire{
+        min-width: 30rem;
+        font-size: 1rem;
+        margin: 1rem;
+    }
 }

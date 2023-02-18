@@ -134,6 +134,18 @@
   transition: all 0.3s ease;
   margin: 0 1rem 1rem;
 }
+.button { 
+  background-color:rgb(254, 59, 0); 
+  color: black; 
+  cursor: pointer; 
+  border: none; 
+  border-radius: 50px;
+  padding: 1rem 2rem; 
+  font-weight: bolder;
+  font-size: 18px; 
+  transition: all 0.3s ease; 
+  margin:2rem 1rem;
+} 
 
 .boutonVoirPanier:hover {
   background-color: white;

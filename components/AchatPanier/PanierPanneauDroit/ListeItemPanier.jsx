@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { useCart } from '/components/AchatPanier/UseCart.jsx';
 import { useRouter } from 'next/router';
 import styles from '/styles/Cart.module.css';
 import CheckoutPanier from '/public/img/cart.png';

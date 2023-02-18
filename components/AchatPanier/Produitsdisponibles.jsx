@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from '/styles/Cart.module.css';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
