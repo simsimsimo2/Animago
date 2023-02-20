@@ -21,7 +21,11 @@ export default function ProduitItemBtnAjouterPanier({ handleAddToCartClick }) {
       <button className={styles.button} onClick={handleClick}>
         Ajouter au Panier
       </button>
-      {visibleState && <PanierPanneau toggler={toggler} />}
+      {/*
+      {visibleState && 
+        <PanierPanneau toggler={toggler}/>
+      }
+      */}
     </>
   );
 }
