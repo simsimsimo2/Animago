@@ -4,15 +4,24 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    gap: 1rem;
-    margin-left: 1rem;
+    gap: 15rem;
 }
 
 .adresseContact{
     padding-top: 2rem;
     display: flex;
     flex-direction: column;
-    width: 15rem;
+    width: 20rem;
+}
+
+.bodyContact{
+    font-size: large;
+    line-height: 1.8;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 10rem;
+    margin: 1rem 65rem;
 }
 
 .horaire{
@@ -26,41 +35,13 @@
     font-weight: bold;
     align-items:flex-start;
     padding-top: 3rem;
-    margin-left: 1rem;
+    margin: 1rem 10rem;
 }
 
 .courriel{
-    font-size: 2rem;
+    font-size: 20;
     color: rgb(254, 59, 0);
     font-weight: bold;
     padding-top: 1rem;
-    margin: 5rem 1rem;
-}
-@media (max-width: 700px) {
-    .titreContact{
-        font-size: 2rem;
-        margin: 1rem;
-    }
-    .adresseContact{
-        margin: 0;
-        flex-direction: row;
-
-        width: 30rem;
-    }
-    .histoire{
-        min-width: 30rem;
-        font-size: 1rem;
-        margin: 1rem;
-    }
-    .magasinContact{
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .divGrid{
-        margin-left: 1rem;
-    }
-    .courriel{
-        margin: 2rem 1rem;
-        padding-bottom: 1rem;
-    }
+    margin: 5rem 10rem;
 }

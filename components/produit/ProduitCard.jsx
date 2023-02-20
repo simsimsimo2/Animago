@@ -48,13 +48,13 @@ export default function ProduitCard({ produits }) {
           <div key={_id} className={`${styles.container} ${styles.containerItem}`}>
             <div className={styles.container}>
               <Image
-                className={styles.img}
+                className={styles.imgCard}
                 src={src}
                 alt={alt || 'Default Image'}
                 width={Number(averageWidth) || 400}
                 height={Number(averageHeight) || 400}
                 onClick={() => router.push(`/produit/${name}`)}
-                />
+              />
             </div>
             <div className={styles.imageInfo}>
               <p className={styles.imageId}>Produit</p>

@@ -38,7 +38,7 @@ export default function Connexion(props) {
     return <>
      <main>
         <div className={styles.container}>
-          <div className={styles.promptWrapper}>
+        <div className={styles.promptWrapper}>
             <button className={styles.button} onClick={() => router.push('/Accueil')}>← Aller à l'accueil</button>
           </div>
           <div className={styles.promptWrapper}>

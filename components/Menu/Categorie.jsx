@@ -8,7 +8,6 @@ export default function Categorie() {
     <>
       <div className={styles.menuCategorie}>
         <h2 className={styles.h2Categorie}>Choisissez une catégorie:</h2>
-        <div>
         <button className={styles.button} onClick={() => router.push('/Boutique/toutMagasiner')}>TOUT MAGASINER</button>
         <button className={styles.button} onClick={() => router.push('/Boutique/chien')}>CHIENS</button>
         <button className={styles.button} onClick={() => router.push('/Boutique/chat')}>CHATS</button>
@@ -16,7 +15,6 @@ export default function Categorie() {
         <button className={styles.button} onClick={() => router.push('/Boutique/aquatique')}>AQUATIQUE</button>
         <button className={styles.button} onClick={() => router.push('/Boutique/petitanimaux')}>PETIT ANIMAUX</button>
         <button className={styles.button} onClick={() => router.push('/Boutique/reptile')}>REPTILES</button>
-        </div>
       </div>
     </>
   );

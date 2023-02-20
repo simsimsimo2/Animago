@@ -13,6 +13,7 @@ export default function PanierPanneau({toggler}) {
   const [cart, initCart, addToCart, removeFromCart, setCart] = useCart();
   const router = useRouter();
   const [total, setTotal] = useState(0);
+  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     initCart();
@@ -21,6 +22,20 @@ export default function PanierPanneau({toggler}) {
   useEffect(() => {
     calcTotal();
   }, [cart]);
+
+  useEffect(() => {
+    if (orders.length > 0) {
+      alert(`Merci d'avoir acheté avec Animago ! Voici le grand total de votre commande $${total}`);
+      setCart([]);
+      setOrders([]);
+      router.push({
+        pathname: '/AchatsPanier/HistoriqueCommande',
+        query: { orders: JSON.stringify(orders) },
+      }); 
+     
+    }
+   
+  }, [orders]);
 
 
   const handleChange = (item, value) => {
@@ -66,26 +81,9 @@ export default function PanierPanneau({toggler}) {
         productIds.push(item._id);
       }
     });
-    try {
-      const response = await fetch('/Checkout/Checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ productIds })
-      });
-      const data = await response.json();
-      if (data.success) {
-        alert('Checkout successful!');
-        setCart([]);
-        router.push('/');
-      } else {
-        throw new Error(data.message);
-      }
-    } catch (error) {
-      console.error(error);
-      alert('An error occurred during checkout');
-    }
+
+    setOrders([...orders, cart]);
+   
   };
 
   return (
@@ -94,9 +92,7 @@ export default function PanierPanneau({toggler}) {
       <div className={`right-side-panel`} >
         <div className="right-side-panel-content" onClick={(e) => e.stopPropagation()}>
           <div className={styles.cart}>
-
             <PanierPanneauHeader toggler={toggler} />
-
             <div className={styles.containerLayout}>
               <section className={styles.section}>
                 <ContenuPanneauPanier

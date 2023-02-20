@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     line-height: 2;
-    margin:auto;
+    margin-right: 6rem;
 }
 
 .titreExpedition{
@@ -25,13 +25,4 @@
     margin-right: 15rem;
     margin-top: 1rem;
     margin-bottom: 8rem;
-}
-@media (max-width: 700px) {
-    .titreExpedition{
-        font-size: 2rem;
-    }
-    .bodyExpedition{
-        margin: auto;
-        margin-left: 1rem;
-    }
 }

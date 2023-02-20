@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { useCart } from '/components/AchatPanier/UseCart.jsx';
 import { useRouter } from 'next/router';
 import styles from '/styles/Cart.module.css';
 import CheckoutPanier from '/public/img/cart.png';
@@ -23,7 +24,7 @@ const ListeItemPanier = ({ cart, handleChange, addToCart, removeFromCart, calcul
                 onClick={() => router.push(`/produit/${item.name}`)}
               />
               <div>
-                <div className={styles.cartFormWragpe}>
+                <div className={styles.cartFormWragper}>
                   <p className={styles.productInfo}>{item.name}</p>
                   <p className={styles.productInfo}>Prix: ${item.price}</p>
                   <p className={styles.productInfo}>En Stock: {item.stock}</p>
