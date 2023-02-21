@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '/styles/ProduitCard.module.css';
 import DashboardButton from '/components/produit/ProduitItemDashBoardBouton.jsx';
 
-export default function ProduitInfo({ product, addToCart, handleAddToCart, handleQuantityChange, clearDepart, quantite }) {
+export default function ProduitInfo({ showPanierPanneau,toggler, product, addToCart, handleAddToCart, handleQuantityChange, clearDepart, quantite, handleAddToCartClick }) {
   const { _id, name, price, stock } = product;
 
   return (
@@ -21,8 +21,11 @@ export default function ProduitInfo({ product, addToCart, handleAddToCart, handl
         addToCart={addToCart}
         handleAddToCart={handleAddToCart}
         handleQuantityChange={handleQuantityChange}
+        handleAddToCartClick={handleAddToCartClick} 
         clearDepart={clearDepart}
         quantite={quantite}
+        toggler={toggler}
+        showPanierPanneau={showPanierPanneau}
       />
     </div>
   );

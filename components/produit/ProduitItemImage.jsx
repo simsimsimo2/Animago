@@ -12,6 +12,7 @@ export default function ProduitItemImage({ product, averageWidth, averageHeight,
         alt={alt || 'Default Image'}
         width={Number(averageWidth) || 250}
         height={Number(averageHeight) || 250}
+        priority={true}
         onClick={() => router.push(`/produit/${product.name}`)}
       />
     </div>

@@ -7,7 +7,7 @@ import PanierPanneauFooter from '/components/AchatPanier/PanierPanneauDroit/Pani
 import PanierPanneauHeader from '/components/AchatPanier/PanierPanneauDroit/PanierPanneauHeader';
 import ContenuPanneauPanier from '/components/AchatPanier/PanierPanneauDroit/ContenuPanneauPanier';
 import { useCart } from '/components/AchatPanier/UseCart.jsx';
-import Toggler from '../../components/Toggler'
+import Toggler from '../../components/Toggler';
 
 export default function PanierPanneau({toggler}) {
   const [cart, initCart, addToCart, removeFromCart, setCart] = useCart();
@@ -81,16 +81,14 @@ export default function PanierPanneau({toggler}) {
         productIds.push(item._id);
       }
     });
-
     setOrders([...orders, cart]);
-   
   };
 
   return (
     <>
       <Toggler visible>
-      <div className={`right-side-panel`} >
-        <div className="right-side-panel-content" onClick={(e) => e.stopPropagation()}>
+      <div className={styles.containerZindex} >
+          <div className={styles.containerZindex} onClick={(e) => e.stopPropagation()}>
           <div className={styles.cart}>
             <PanierPanneauHeader toggler={toggler} />
             <div className={styles.containerLayout}>

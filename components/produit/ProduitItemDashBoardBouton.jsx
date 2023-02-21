@@ -1,8 +1,8 @@
 import styles from '/styles/ProduitCard.module.css';
 import AjouterEnleverPanier from './AjouterEnleverPanier';
-import ProduitItemBtnAjouterPanier from "./PanierItemBtnAjouterPanier"
+import ProduitItemBtnAjouterPanier from './PanierItemBtnAjouterPanier';
 
-export default function ProduitItemDashBoardBouton({ stock, depart, product, addToCart, handleAddToCart, handleQuantityChange, clearDepart, quantite }) {
+export default function ProduitItemDashBoardBouton({ showPanierPanneau, toggler, stock, depart, product, addToCart, handleAddToCart, handleQuantityChange, clearDepart, quantite }) {
   const { _id, name, price } = product;
 
   const handleCartClick = () => {
@@ -10,9 +10,9 @@ export default function ProduitItemDashBoardBouton({ stock, depart, product, add
     handleAddToCart({ _id, stock }, quantite, () => handleQuantityChange(0));
   };
 
-  const handleAddToCartClick = () => {
-    handleAddToCart({ _id, stock }, quantite);
-    clearDepart();
+  const handleAddToCartClick = (newDepart) => {
+    handleAddToCart({ _id, stock }, quantite, () => handleQuantityChange(0));
+    clearDepart(newDepart);
   };
 
   return (
@@ -26,7 +26,12 @@ export default function ProduitItemDashBoardBouton({ stock, depart, product, add
         onClearDepart={clearDepart}
         quantite={quantite}
       />
-      <ProduitItemBtnAjouterPanier handleAddToCartClick={handleAddToCartClick} />
+      <ProduitItemBtnAjouterPanier
+        handleAddToCartClick={handleAddToCartClick}
+        clearDepart={clearDepart}
+        toggler={toggler}
+        showPanierPanneau={showPanierPanneau}
+      />
     </div>
   );
 }

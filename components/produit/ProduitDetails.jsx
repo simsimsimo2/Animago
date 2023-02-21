@@ -32,15 +32,13 @@ export default function ProduitDetails({ product }) {
                 alt={product.alt || 'Default Image'}
                 width={product.width}
                 height={product.height}
+                priority={true}
               />
               <p className={styles.p}>Produit#: {product._id}</p>
               <p className={styles.p}>Categorie: {product.categorie}</p>
               <p className={styles.p}>Item en Stock: {product.stock}</p>
               <p className={styles.p}>Prix: C${product.price}</p>              
-              <button
-                className={styles.button}
-                onClick={() => router.back()}
-              >
+              <button className={styles.button} onClick={() => router.back()}>
                 ← Retour aux produits
               </button>
             </div>

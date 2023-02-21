@@ -1,19 +1,36 @@
 import styles from '/styles/ProduitCard.module.css';
-import ProduitInfo from '/components/produit/ProduitItemInfo.jsx';
+import ProduitItemInfo from '/components/produit/ProduitItemInfo.jsx';
 import ProduitItemImage from '/components/produit/ProduitItemImage.jsx';
-import React from 'react';
+import React, { useState } from 'react';
+export default function ProduitItem({ showPanierPanneau,toggler, product, averageWidth, averageHeight, router, addToCart, handleAddToCart }) {
+  const [quantite, setQuantite] = useState(0);
 
-export default function ProduitItem({ product, averageWidth, averageHeight, router, addToCart, handleAddToCart, handleQuantityChange, clearDepart, quantite }) {
+  const handleQuantityChange = (newQuantity) => {
+    setQuantite(newQuantity);
+  };
+
+  const clearDepart = () => {
+    setQuantite(0);
+  };
+
+  const handleAddToCartClick = () => {
+    handleAddToCart({ _id: product._id, stock: product.stock }, quantite);
+    clearDepart();
+  };
+
   return (
     <div key={product._id} className={`${styles.container} ${styles.containerItem}`}>
       <ProduitItemImage product={product} averageWidth={averageWidth} averageHeight={averageHeight} router={router} />
-      <ProduitInfo
+      <ProduitItemInfo
         product={product}
         addToCart={addToCart}
         handleAddToCart={handleAddToCart}
         handleQuantityChange={handleQuantityChange}
         clearDepart={clearDepart}
         quantite={quantite}
+        handleAddToCartClick={handleAddToCartClick}
+        toggler={toggler}
+        showPanierPanneau={showPanierPanneau}
       />
     </div>
   );
