@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import styles from '/styles/Gallerie.module.css';
-
-function Gallerie({ images }) {
+// <div key={index} className={styles.container} style={index === 5 && !toggler ? { zIndex:-1 } : null}>
+function Gallerie({ images, toggler }) {
   const router = useRouter();
 
   return (
