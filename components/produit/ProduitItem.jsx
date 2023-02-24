@@ -1,21 +1,23 @@
 import styles from '/styles/ProduitCard.module.css';
 import ProduitItemInfo from '/components/produit/ProduitItemInfo.jsx';
 import ProduitItemImage from '/components/produit/ProduitItemImage.jsx';
-import React, { useState } from 'react';
-export default function ProduitItem({ showPanierPanneau,toggler, product, averageWidth, averageHeight, router, addToCart, handleAddToCart }) {
-  const [quantite, setQuantite] = useState(0);
+import React from 'react';
+import GetterSetterQuantite from '/components/ProduitBindingPanier/GetterSetterQuantite/GetterSetterQuantite';
+import UpdateProductStockAndSetCart from "/components/ProduitBindingPanier/UpdateProductStockAndSetCart/UpdateProductStockAndSetCart";
 
-  const handleQuantityChange = (newQuantity) => {
-    setQuantite(newQuantity);
-  };
+export default function ProduitItem({ showPanierPanneau,
+  toggler,
+  product,
+  averageWidth,
+  averageHeight,
+  router,
+  addToCart,
+  updateProductStockAndSetCart }) {
+  const { quantite, setQuantite, handleQuantityChange } = GetterSetterQuantite();
 
-  const clearDepart = () => {
+  const handleAddProductToCartWithQuantityReset = () => {
+    updateProductStockAndSetCart({ _id: product._id, stock: product.stock }, quantite);
     setQuantite(0);
-  };
-
-  const handleAddToCartClick = () => {
-    handleAddToCart({ _id: product._id, stock: product.stock }, quantite);
-    clearDepart();
   };
 
   return (
@@ -24,13 +26,14 @@ export default function ProduitItem({ showPanierPanneau,toggler, product, averag
       <ProduitItemInfo
         product={product}
         addToCart={addToCart}
-        handleAddToCart={handleAddToCart}
+        updateProductStockAndSetCart={updateProductStockAndSetCart}
         handleQuantityChange={handleQuantityChange}
-        clearDepart={clearDepart}
+     
         quantite={quantite}
-        handleAddToCartClick={handleAddToCartClick}
+        handleAddProductToCartWithQuantityReset={handleAddProductToCartWithQuantityReset}
         toggler={toggler}
         showPanierPanneau={showPanierPanneau}
+        item={product}
       />
     </div>
   );
