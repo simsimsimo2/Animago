@@ -3,19 +3,28 @@ import { useRouter } from 'next/router';
 import { useCart } from '/components/AchatPanier/UseCart.jsx';
 import MainTouteComponentPanier from '/components/AchatPanier/PanierPanneauDroit/MainTouteComponentPanier';
 import styles from '/styles/Header.module.css';
-import GetterSetterTotalPriceInCart from '/components/ProduitBindingPanier/GetterSetterTotalPriceInCart/GetterSetterTotalPriceInCart'
 import UpdateProductStockAndSetCart from '/components/ProduitBindingPanier/UpdateProductStockAndSetCart/UpdateProductStockAndSetCart';
+import GetterSetterTotalPriceInCart from '/components/ProduitBindingPanier/GetterSetterTotalPriceInCart/GetterSetterTotalPriceInCart';
 
-export default function PanierPanneau({ toggler  }) {
-  const [cart, initCart, addToCart, removeFromCart, setCart] = useCart();
+export default function PanierPanneau({
+  toggler,
+  cart,
+  initCart,
+  addToCart,
+  removeFromCart,
+  setCart,
+  getPurchaseQuantity,
+  getRemainingStock
+}) {
+//  const [cart, initCart, addToCart, removeFromCart, setCart, getPurchaseQuantity, getRemainingStock ] = useCart();
   const router = useRouter();
-  const [totalPriceInCart, setTotalPriceInCart] = useState(0);
   const [orders, setOrders] = useState([]);
-
+  const [totalPriceInCart, setTotalPriceInCart] = useState(0);
+/*
   useEffect(() => {
     initCart();
   }, []);
-
+*/
   useEffect(() => {
     calcTotal();
   }, [cart]);
@@ -41,56 +50,28 @@ export default function PanierPanneau({ toggler  }) {
       const updatedCart = [...cart];
       const itemIndex = updatedCart.findIndex((i) => i._id === item._id);
       if (itemIndex !== -1) {
-        const stock = updatedCart[itemIndex].stock;
         const updatedItem = {
           ...updatedCart[itemIndex],
-          purchaseQuantity: value >= 0 ? Math.min(parseInt(value, 10), updatedCart[itemIndex]?.stock || 0) : 0,
+          purchaseQuantity: Math.max(Math.min(parseInt(value, 10), updatedCart[itemIndex]?.stock || getPurchaseQuantity(item._id)), 0),
         };
-        const newCart = [
-          ...updatedCart.slice(0, itemIndex),
-          updatedItem,
-          ...updatedCart.slice(itemIndex + 1),
-        ];
+        const newCart = [        ...updatedCart.slice(0, itemIndex),        updatedItem,        ...updatedCart.slice(itemIndex + 1),      ];
         setCart(newCart);
       }
     }
   };
-
-/*
-const handleChange = (item, value) => {
-  if (Number.isInteger(value)) {
-    const updatedCart = [...cart];
-    const itemIndex = updatedCart.findIndex((i) => i._id === item._id);
-    if (itemIndex !== -1) {
-      const initialStock = parseInt(item.stock);
-      const purchaseQuantity = Number.isInteger(value) >= 0  ? Math.min(parseInt(value, 10), parseInt(initialStock)) : 0;
-      const diff = parseInt(purchaseQuantity) - parseInt(item.purchaseQuantity);
-      const updatedItem = {
-        ...item,
-        purchaseQuantity,
-        stock: parseInt(initialStock) - parseInt(diff),
-      };
-      const newCart = [
-        ...updatedCart.slice(0, itemIndex),
-        updatedItem,
-        ...updatedCart.slice(itemIndex + 1),
-      ];
-      setCart(newCart);
-    }
-  }
-};
-*/
-
+  
   const calcTotal = () => {
     let sum = 0;
-    cart.forEach((item) => {
-      if (parseFloat(item.price) && parseFloat(item.purchaseQuantity)) {
-        sum += parseFloat(item.price) * parseFloat(item.purchaseQuantity);
-      }
-    });
+    if (cart) {
+      cart.forEach((item) => {
+        if (parseFloat(item.price) && parseFloat(item.purchaseQuantity)) {
+          sum += parseFloat(item.price) * parseFloat(item.purchaseQuantity);
+        }
+      });
+    }
     setTotalPriceInCart(parseFloat(sum.toFixed(2)));
   };
-
+  
   const submitCheckout = async () => {
     if (totalPriceInCart <= 0) {
       alert("Votre panier est actuellement vide. Pour pouvoir effectuer une commande, veuillez ajouter des produits à votre panier.");
@@ -99,7 +80,7 @@ const handleChange = (item, value) => {
   
     const productIds = [];
     cart.forEach((item) => {
-      for (let i = 0; i < item.purchaseQuantity; i++) {
+      for (let i = 0; i < Number.isInteger(item.purchaseQuantity); i++) {
         productIds.push(item._id);
       }
     });
@@ -110,16 +91,45 @@ const handleChange = (item, value) => {
     <>
       <div className={`${styles.rightPanel} ${toggler ? 'active' : ''}`}>
       <MainTouteComponentPanier
-        cart={cart}
-        handleChange={handleChange}
-        removeFromCart={removeFromCart}
-        router={router}
-        submitCheckout={submitCheckout}
-        addToCart={addToCart}
-        toggler={toggler}
+          cart={cart}
+          handleChange={handleChange}
+          removeFromCart={removeFromCart}
+          router={router}
+          submitCheckout={submitCheckout}
+          addToCart={addToCart}
+          toggler={toggler}
+          getRemainingStock={getRemainingStock}
+          getPurchaseQuantity={getPurchaseQuantity}
         />
         </div>
       </>
-  
   );
 }
+
+/*
+export async function getServerSideProps(context) {
+  const [
+    cart,
+    initCart,
+    addToCart,
+    removeFromCart,
+    setCart,
+    getPurchaseQuantity,
+    getRemainingStock
+  ] = useCart();
+
+  return {
+    props: {
+      cartProps: [
+        cart,
+        initCart,
+        addToCart,
+        removeFromCart,
+        setCart,
+        getPurchaseQuantity,
+        getRemainingStock
+      ]
+    }
+  };
+}
+*/

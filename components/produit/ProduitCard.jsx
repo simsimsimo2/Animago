@@ -6,10 +6,21 @@ import DimensionsMoyennesImages from '/components/Images/DimensionsMoyennesImage
 import ProduitItem from "/components/produit/ProduitItem.jsx";
 import UpdateProductStockAndSetCart from "/components/ProduitBindingPanier/UpdateProductStockAndSetCart/UpdateProductStockAndSetCart"
 
-export default function ProduitCard({showPanierPanneau, toggler, produits }) {
+export default function ProduitCard({
+  showPanierPanneau,
+  toggler,
+  produits,
+  addToCart,
+  getPurchaseQuantity,
+  getRemainingStock
+}) {
   const router = useRouter();
-  const [, addToCart] = useCart();
   const { produitsState, setProduits, updateProductStockAndSetCart } = UpdateProductStockAndSetCart({ produits });
+
+  // Wait until produitsState is defined before rendering the component
+  if (!produitsState) {
+    return null;
+  }
 
   return (
     <div className={styles.gallerie}>
@@ -23,10 +34,12 @@ export default function ProduitCard({showPanierPanneau, toggler, produits }) {
                 averageWidth={averageWidth}
                 averageHeight={averageHeight}
                 router={router}
-                addToCart={addToCart}
                 updateProductStockAndSetCart={updateProductStockAndSetCart}              
                 toggler={toggler}
                 showPanierPanneau={showPanierPanneau}
+                addToCart={addToCart}
+                getPurchaseQuantity={getPurchaseQuantity}
+                getRemainingStock={getRemainingStock}
               />
             ))}
           </>
@@ -35,3 +48,4 @@ export default function ProduitCard({showPanierPanneau, toggler, produits }) {
     </div>
   );
 }
+

@@ -16,7 +16,7 @@ export const useCart = () => {
       return p;
     });
 
-    const existingItem = cart.find((p) => p._id === product._id);
+    const existingItem = updatedCart.find((p) => p._id === product._id);
 
     if (!existingItem) {
       updatedCart.push({ ...product, purchaseQuantity: quantity });
@@ -30,5 +30,23 @@ export const useCart = () => {
     setCart(updatedCart);
   };
 
-  return [cart, initCart, addToCart, removeFromCart, setCart];
+  const getPurchaseQuantity = (itemId) => {
+    const item = cart.find((p) => p._id === itemId);
+    if (item) {
+      return item.purchaseQuantity;
+    }
+    return 0;
+  };
+
+  const getRemainingStock = (itemId) => {
+    const item = cart.find((p) => p._id === itemId);
+    if (item) {
+      const totalQuantity = item.purchaseQuantity;
+      const remainingStock = parseInt(item.stock) - totalQuantity;
+      return remainingStock >= 0 ? remainingStock : 0;
+    }
+    return 0;
+  };
+
+  return [cart, initCart, addToCart, removeFromCart, setCart, getPurchaseQuantity, getRemainingStock];
 };
