@@ -3,11 +3,13 @@ import { useRouter } from 'next/router';
 import { useCart } from '/components/AchatPanier/UseCart.jsx';
 import MainTouteComponentPanier from '/components/AchatPanier/PanierPanneauDroit/MainTouteComponentPanier';
 import styles from '/styles/Header.module.css';
+import GetterSetterTotalPriceInCart from '/components/ProduitBindingPanier/GetterSetterTotalPriceInCart/GetterSetterTotalPriceInCart'
+import UpdateProductStockAndSetCart from '/components/ProduitBindingPanier/UpdateProductStockAndSetCart/UpdateProductStockAndSetCart';
 
-export default function PanierPanneau({ toggler }) {
+export default function PanierPanneau({ toggler  }) {
   const [cart, initCart, addToCart, removeFromCart, setCart] = useCart();
   const router = useRouter();
-  const [total, setTotal] = useState(0);
+  const [totalPriceInCart, setTotalPriceInCart] = useState(0);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
@@ -20,7 +22,11 @@ export default function PanierPanneau({ toggler }) {
 
   useEffect(() => {
     if (orders.length > 0) {
-      alert(`Merci d'avoir acheté avec Animago ! Voici le grand total de votre commande $${total}`);
+      alert(`${
+      `      Merci d'avoir acheté chez Animago ! Nous apprécions votre confiance en nos produits et services.
+      Votre commande a bien été prise en compte et le montant total de votre achat est de $${totalPriceInCart}.
+      Nous espérons que vous êtes satisfait de votre achat et nous espérons vous revoir bientôt chez Animago pour de nouveaux achats.`
+      }`);
       setCart([]);
       setOrders([]);
       router.push({
@@ -49,7 +55,31 @@ export default function PanierPanneau({ toggler }) {
       }
     }
   };
-  
+
+/*
+const handleChange = (item, value) => {
+  if (Number.isInteger(value)) {
+    const updatedCart = [...cart];
+    const itemIndex = updatedCart.findIndex((i) => i._id === item._id);
+    if (itemIndex !== -1) {
+      const initialStock = parseInt(item.stock);
+      const purchaseQuantity = Number.isInteger(value) >= 0  ? Math.min(parseInt(value, 10), parseInt(initialStock)) : 0;
+      const diff = parseInt(purchaseQuantity) - parseInt(item.purchaseQuantity);
+      const updatedItem = {
+        ...item,
+        purchaseQuantity,
+        stock: parseInt(initialStock) - parseInt(diff),
+      };
+      const newCart = [
+        ...updatedCart.slice(0, itemIndex),
+        updatedItem,
+        ...updatedCart.slice(itemIndex + 1),
+      ];
+      setCart(newCart);
+    }
+  }
+};
+*/
 
   const calcTotal = () => {
     let sum = 0;
@@ -58,12 +88,12 @@ export default function PanierPanneau({ toggler }) {
         sum += parseFloat(item.price) * parseFloat(item.purchaseQuantity);
       }
     });
-    setTotal(parseFloat(sum.toFixed(2)));
+    setTotalPriceInCart(parseFloat(sum.toFixed(2)));
   };
 
   const submitCheckout = async () => {
-    if (total === 0) {
-      alert("Votre panier est vide, vous ne pouvez pas effectuer de commande.");
+    if (totalPriceInCart <= 0) {
+      alert("Votre panier est actuellement vide. Pour pouvoir effectuer une commande, veuillez ajouter des produits à votre panier.");
       return;
     }
   
@@ -76,7 +106,6 @@ export default function PanierPanneau({ toggler }) {
     setOrders([...orders, cart]);
   };
   
-
   return (
     <>
       <div className={`${styles.rightPanel} ${toggler ? 'active' : ''}`}>
@@ -88,7 +117,6 @@ export default function PanierPanneau({ toggler }) {
         submitCheckout={submitCheckout}
         addToCart={addToCart}
         toggler={toggler}
-        total={total}
         />
         </div>
       </>

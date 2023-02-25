@@ -20,8 +20,7 @@ function ContenuPanneauPanier({ cart, handleChange, removeFromCart, router, calc
         addToCart={addToCart}
         removeFromCart={removeFromCart}
         router={router}
-        calculateTotal={calculateTotal}
-        total={<TotalAchatParItemResultat cart={cart} />}
+        calculateTotal={calculateTotal} 
         submitCheckout={submitCheckout}
       />
     </>
