@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Menu from './Menu/Menu';
 import styles from '../styles/Header.module.css';
@@ -15,6 +15,22 @@ export default function Header() {
     const [query, setQuery] = useState("");
     const router = useRouter();
     
+    const [isLoggedin,setIsLoggedin] = useState();
+    useEffect(() => {
+        if(localStorage.getItem('token-info') !== null){
+         setIsLoggedin(true)
+        }
+        else{
+            setIsLoggedin(false)
+        }
+     }, [])
+
+    const logout = () => {
+        localStorage.setItem('isLoggedin', 'false');
+        localStorage.removeItem('token-info');
+        setIsLoggedin(false);
+    };
+    
     const handleChange = (event) => {
         setQuery(event.target.value);
     };
@@ -22,7 +38,6 @@ export default function Header() {
     const handleSubmit = event => {
         event.preventDefault();
         router.push(`/produit/${query}`);
-       // console.log(`Searching for: ${query}`);
     };
 
     const [visibleState, setVisible] = useState();
@@ -106,21 +121,31 @@ export default function Header() {
                     <div className={`${styles.menuLogo} ${toggler ? styles.rightPanelOn : styles.rightPanelOff}`} >
 
                         <div className={`${styles.menuProductList}`} >
-                        <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>
+                            {!isLoggedin ? (
+                            <>
+                                <div>
+                                    <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Connexion")}>Connexion</a>
+                                </div>
+                                <div>
+                                    <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
+                                </div>
+                            </>
+                            ) : (
+                            <>
+                            <a  className={styles.aLogin} 
+                                onClick={() => router.push("/InscriptionConnexion/Profil")}>
                                 <Image
                                     src={Login}
-                                    alt={'lien pour se connecter' || 'Default Image'}
+                                    alt={'Info compte' || 'Default Image'}
                                     className={styles.loginCart}
                                     priority={true}
                                 />
                             </a>
                             <div>
-                            <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Connexion")}>Connexion</a>
+                                <a className={styles.aLogin} onClick={logout}>Deconnexion</a>
                             </div>
-                            <div>
-                                <a className={styles.aLogin} onClick={() => router.push("/InscriptionConnexion/Inscription")}>Inscription</a>
-                            </div>
-                            
+                            </>
+                            )}
                         </div>
                         <div className={styles.menuProductList}>
                             <a className={styles.aLogin}>

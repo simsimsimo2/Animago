@@ -14,7 +14,7 @@ import Cart from '../public/img/cart.png';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-
+ 
   useEffect(() => {
     if (router.pathname === '/') {
       router.push('/Accueil');

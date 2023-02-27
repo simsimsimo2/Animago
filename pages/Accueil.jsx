@@ -1,12 +1,9 @@
-import { Inter } from '@next/font/google'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import styles from '../styles/Accueil.module.css'
 import Gallerie from '../components/Accueil/ImageAccueil';
 import ImagePrincipal from '../public/img/image_accueil.png'
 import Image from 'next/image';
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Accueil() {
   return (
