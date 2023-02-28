@@ -3,7 +3,14 @@ import styles from '/styles/Cart.module.css';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-export default function ProduitImagePanier({ src, alt = 'Default Image', averageWidth, averageHeight, name, onClick }) {
+export default function ProduitImagePanier({
+  src,
+  alt = 'Default Image',
+  averageWidth,
+  averageHeight,
+  name,
+  onClick,
+}) {
   const router = useRouter();
   const DEFAULT_WIDTH = 100;
   const DEFAULT_HEIGHT = 100;

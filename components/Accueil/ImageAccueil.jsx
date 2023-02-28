@@ -6,5 +6,5 @@ export default function ImageGallery() {
     <>
       <Gallerie images={images} priority={true} />
     </>
-  );    
+  );
 }

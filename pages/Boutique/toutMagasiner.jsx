@@ -20,7 +20,11 @@ export default function ToutMagasiner() {
       <main>
         <Header />
         <h1 className={styles.h1}>Tout magasiner</h1>
-        <ProduitListe showPanierPanneau={visibleState} toggler={toggler} categorie={undefined} />
+        <ProduitListe
+          showPanierPanneau={visibleState}
+          toggler={toggler}
+          categorie={undefined}
+        />
       </main>
       <Footer />
     </>

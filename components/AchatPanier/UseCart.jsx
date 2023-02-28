@@ -11,7 +11,7 @@ export const useCart = () => {
   const addToCart = (product, quantity) => {
     const existingItem = cart.find((p) => p._id === product._id);
     let updatedCart;
-    
+
     if (existingItem) {
       updatedCart = cart.map((p) => {
         if (p._id === product._id) {
@@ -21,20 +21,22 @@ export const useCart = () => {
       });
     } else {
       const initialCartItem = panier.find((p) => p._id === product._id);
-      const productWithSrc = { ...product, purchaseQuantity: quantity, src: product.src };
-      
+      const productWithSrc = {
+        ...product,
+        purchaseQuantity: quantity,
+        src: product.src,
+      };
+
       if (initialCartItem) {
         productWithSrc.stock = initialCartItem.stock;
         productWithSrc.src = initialCartItem.src;
       }
-      
+
       updatedCart = [...cart, productWithSrc];
     }
-  
+
     setCart(updatedCart);
   };
-  
-  
 
   const removeFromCart = (item) => {
     const updatedCart = cart.filter((p) => p._id !== item._id);
@@ -59,5 +61,13 @@ export const useCart = () => {
     return 0;
   };
 
-  return [cart, initCart, addToCart, removeFromCart, setCart, getPurchaseQuantity, getRemainingStock];
+  return [
+    cart,
+    initCart,
+    addToCart,
+    removeFromCart,
+    setCart,
+    getPurchaseQuantity,
+    getRemainingStock,
+  ];
 };

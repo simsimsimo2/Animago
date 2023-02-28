@@ -22,42 +22,74 @@ export default function Footer() {
               </div>
               <div className={`${styles.catchPhrase} ${styles.containerP}`}>
                 <h3 className={styles.h3}>Boutique</h3>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Boutique/chien')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Boutique/chien')}
+                >
                   Chiens
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Boutique/chat')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Boutique/chat')}
+                >
                   Chats
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Boutique/oiseau')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Boutique/oiseau')}
+                >
                   Oiseaux
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Boutique/aquatique')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Boutique/aquatique')}
+                >
                   Poissons et Aquatiques
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Boutique/petitanimaux')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Boutique/petitanimaux')}
+                >
                   Petit Animaux
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Boutique/reptile')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Boutique/reptile')}
+                >
                   Reptiles
                 </button>
               </div>
               <div className={`${styles.catchPhrase} ${styles.containerP}`}>
                 <h3 className={styles.h3}>Info</h3>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Info/histoire')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Info/histoire')}
+                >
                   Notre histoire
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Info/contact')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Info/contact')}
+                >
                   Contact
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Info/expeditionRetours')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Info/expeditionRetours')}
+                >
                   Expedition & retours
                 </button>
-                <button className={styles.menuFooterList} onClick={() => router.push('/Info/politique')}>
+                <button
+                  className={styles.menuFooterList}
+                  onClick={() => router.push('/Info/politique')}
+                >
                   Politique du magasin
                 </button>
               </div>
             </div>
-            <h4 className={`${styles.catchPhrase} ${styles.containerP}`}>RESTER CONNECTÉ AVEC NOUS</h4>
+            <h4 className={`${styles.catchPhrase} ${styles.containerP}`}>
+              RESTER CONNECTÉ AVEC NOUS
+            </h4>
             <div className={styles.catchPhrase}>
               <a onClick={() => router.push('https://facebook.com')}>
                 <Image

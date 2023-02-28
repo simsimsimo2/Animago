@@ -5,7 +5,7 @@ import 'normalize.css/normalize.css';
 import '@/styles/globals.css';
 import Head from 'next/head';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify';
 import ImagePrincipal from '../public/img/image_accueil.png';
 import facebook from '../public/img/facebook.svg';
 import instagram from '../public/img/instagram.svg';
@@ -16,7 +16,7 @@ import Cart from '../public/img/cart.png';
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
- 
+
   useEffect(() => {
     if (router.pathname === '/') {
       router.push('/Accueil');

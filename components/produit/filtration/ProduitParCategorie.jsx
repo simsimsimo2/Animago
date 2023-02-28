@@ -3,7 +3,12 @@ import ProduitCard from '../ProduitCard';
 import { useCart } from '/components/AchatPanier/UseCart.jsx';
 import PanierPanneau from '@/pages/AchatsPanier/PanierPanneau';
 
-export default function ProduitParCategorie({ showPanierPanneau, toggler, categorie, cartProps }) {
+export default function ProduitParCategorie({
+  showPanierPanneau,
+  toggler,
+  categorie,
+  cartProps,
+}) {
   // const [
   //   cart = [],
   //   initCart,
@@ -13,32 +18,41 @@ export default function ProduitParCategorie({ showPanierPanneau, toggler, catego
   //   getPurchaseQuantity,
   //   getRemainingStock
   // ] = Array.isArray(cartProps) ? cartProps : [];
-  const [cart, initCart, addToCart, removeFromCart, setCart,getPurchaseQuantity,getRemainingStock] = useCart();
-/*
+  const [
+    cart,
+    initCart,
+    addToCart,
+    removeFromCart,
+    setCart,
+    getPurchaseQuantity,
+    getRemainingStock,
+  ] = useCart();
+  /*
   useEffect(() => {
     initCart();
   }, []);
   */
   const filteredProduits = cart
     ? categorie
-      ? cart.filter(({ categorie: produitCategorie }) => produitCategorie === categorie)
+      ? cart.filter(
+          ({ categorie: produitCategorie }) => produitCategorie === categorie
+        )
       : cart
     : [];
-  
+
   return (
     <main>
-
       <PanierPanneau
-      toggler={toggler}
+        toggler={toggler}
         cart={cart}
         initCart={initCart}
-        addToCart={addToCart }
+        addToCart={addToCart}
         removeFromCart={removeFromCart}
         setCart={setCart}
-        getPurchaseQuantity={getPurchaseQuantity }
+        getPurchaseQuantity={getPurchaseQuantity}
         getRemainingStock={getRemainingStock}
       />
- 
+
       <ProduitCard
         showPanierPanneau={showPanierPanneau}
         toggler={toggler}

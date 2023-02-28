@@ -18,7 +18,11 @@ export default function Chien() {
       {!visibleState && <PanierPanneau toggler={toggler} />}
       <main>
         <h1 className={styles.h1}>Chiens</h1>
-        <ProduitListe showPanierPanneau={visibleState} toggler={toggler} categorie="chien" />
+        <ProduitListe
+          showPanierPanneau={visibleState}
+          toggler={toggler}
+          categorie="chien"
+        />
       </main>
       <Footer />
     </>

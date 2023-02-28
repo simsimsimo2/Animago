@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext } from 'react';
 import { useProductReducer } from './store';
 
 const StoreContext = createContext();
@@ -14,8 +14,8 @@ export default function StoreProvider({ value = [], ...props }) {
   });
 
   return <Provider value={[state, dispatch]} {...props} />;
-};
+}
 
 export function useStoreContext() {
   return useContext(StoreContext);
-};
+}

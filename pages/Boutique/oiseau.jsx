@@ -13,14 +13,18 @@ export default function Oiseau() {
   const toggler = () => {
     setVisible(!visibleState);
   };
-  
+
   return (
     <>
       <Header />
       {!visibleState && <PanierPanneau toggler={toggler} />}
       <main>
         <h1 className={styles.h1}>Oiseaux</h1>
-        <ProduitListe showPanierPanneau={visibleState} toggler={toggler} categorie="oiseaux" />
+        <ProduitListe
+          showPanierPanneau={visibleState}
+          toggler={toggler}
+          categorie="oiseaux"
+        />
       </main>
       <Footer />
     </>

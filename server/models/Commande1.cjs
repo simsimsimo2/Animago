@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-const Panier = require("./Panier1.cjs");
-const User = require("./User.cjs");
+const mongoose = require('mongoose');
+const Panier = require('./Panier1.cjs');
+const User = require('./User.cjs');
 
 const commandeSchema = new mongoose.Schema({
   panier: { type: Panier.schema, required: true },
@@ -11,9 +11,9 @@ const commandeSchema = new mongoose.Schema({
 let Commande;
 
 try {
-  Commande = mongoose.model("Commande");
+  Commande = mongoose.model('Commande');
 } catch (error) {
-  Commande = mongoose.model("Commande", commandeSchema);
+  Commande = mongoose.model('Commande', commandeSchema);
 }
 
 module.exports = Commande;

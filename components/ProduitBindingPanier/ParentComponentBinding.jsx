@@ -8,12 +8,6 @@ import ProduitInfoPanier from '/components/AchatPanier/ProduitInfoPanier.jsx';
 import styles from '/styles/AjouterEnleverPanier.module.css';
 import AjouterEnleverPanier from '/components/produit//AjouterEnleverPanier';
 
-export default function ParentComponentBinding({AjouterEnleverPanier }) {
-   
-      
-
-    return (
-        <>
-        </>
-    );
+export default function ParentComponentBinding({ AjouterEnleverPanier }) {
+  return <></>;
 }

@@ -3,8 +3,8 @@ import styles from '/styles/ProduitCard.module.css';
 import React from 'react';
 import { useCart } from '/components/AchatPanier/UseCart';
 import DimensionsMoyennesImages from '/components/Images/DimensionsMoyennesImages.jsx';
-import ProduitItem from "/components/produit/ProduitItem.jsx";
-import UpdateProductStockAndSetCart from "/components/ProduitBindingPanier/UpdateProductStockAndSetCart/UpdateProductStockAndSetCart"
+import ProduitItem from '/components/produit/ProduitItem.jsx';
+import UpdateProductStockAndSetCart from '/components/ProduitBindingPanier/UpdateProductStockAndSetCart/UpdateProductStockAndSetCart';
 
 export default function ProduitCard({
   showPanierPanneau,
@@ -12,10 +12,11 @@ export default function ProduitCard({
   produits,
   addToCart,
   getPurchaseQuantity,
-  getRemainingStock
+  getRemainingStock,
 }) {
   const router = useRouter();
-  const { produitsState, setProduits, updateProductStockAndSetCart } = UpdateProductStockAndSetCart({ produits });
+  const { produitsState, setProduits, updateProductStockAndSetCart } =
+    UpdateProductStockAndSetCart({ produits });
 
   // Wait until produitsState is defined before rendering the component
   if (!produitsState) {
@@ -34,7 +35,7 @@ export default function ProduitCard({
                 averageWidth={averageWidth}
                 averageHeight={averageHeight}
                 router={router}
-                updateProductStockAndSetCart={updateProductStockAndSetCart}              
+                updateProductStockAndSetCart={updateProductStockAndSetCart}
                 toggler={toggler}
                 showPanierPanneau={showPanierPanneau}
                 addToCart={addToCart}
@@ -48,4 +49,3 @@ export default function ProduitCard({
     </div>
   );
 }
-

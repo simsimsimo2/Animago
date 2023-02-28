@@ -1,5 +1,5 @@
-import React, { createContext, useContext } from "react";
-import { useProductReducer } from './store'
+import React, { createContext, useContext } from 'react';
+import { useProductReducer } from './store';
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;

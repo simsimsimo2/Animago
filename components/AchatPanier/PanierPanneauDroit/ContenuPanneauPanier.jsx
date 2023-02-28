@@ -13,9 +13,9 @@ function ContenuPanneauPanier({
   addToCart,
   getRemainingStock,
   getPurchaseQuantity,
-  setCart
+  setCart,
 }) {
- /*
+  /*
   if (!cart || cart.length === 0) {
   
     const time = 3000;
@@ -34,7 +34,7 @@ function ContenuPanneauPanier({
         addToCart={addToCart}
         removeFromCart={removeFromCart}
         router={router}
-        calculateTotal={calculateTotal} 
+        calculateTotal={calculateTotal}
         submitCheckout={submitCheckout}
         getRemainingStock={getRemainingStock}
         getPurchaseQuantity={getPurchaseQuantity}

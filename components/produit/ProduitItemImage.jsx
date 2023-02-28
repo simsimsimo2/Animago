@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import styles from '/styles/ProduitCard.module.css';
 
-export default function ProduitItemImage({ product, averageWidth, averageHeight, router }) {
+export default function ProduitItemImage({
+  product,
+  averageWidth,
+  averageHeight,
+  router,
+}) {
   const { _id, src, alt } = product;
 
   return (

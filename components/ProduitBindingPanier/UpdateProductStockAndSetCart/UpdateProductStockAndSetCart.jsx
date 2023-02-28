@@ -8,7 +8,10 @@ export default function UpdateProductStockAndSetCart({ produits }) {
       return;
     }
     const productIndex = produitsState.findIndex((p) => p._id === _id);
-    const updatedProduct = { ...produitsState[productIndex], stock: stock - quantity };
+    const updatedProduct = {
+      ...produitsState[productIndex],
+      stock: stock - quantity,
+    };
     const updatedProduits = [
       ...produitsState.slice(0, productIndex),
       updatedProduct,

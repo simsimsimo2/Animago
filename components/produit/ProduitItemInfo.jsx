@@ -12,7 +12,7 @@ export default function ProduitInfo({
   quantite,
   handleAddProductToCartWithQuantityReset,
   getPurchaseQuantity,
-  getRemainingStock
+  getRemainingStock,
 }) {
   const { _id, name, price, stock } = product;
 
@@ -23,15 +23,18 @@ export default function ProduitInfo({
       <p className={styles.imageName}>{name}</p>
       <p className={styles.imagePrice}>C${price}</p>
       <p className={styles.imageStock}>
-        <span className={styles.stock}>{getRemainingStock(_id)}</span> items en stock
+        <span className={styles.stock}>{getRemainingStock(_id)}</span> items en
+        stock
       </p>
       <DashboardButton
         stock={stock}
         depart={quantite}
         product={{ _id, name, price }}
         updateProductStockAndSetCart={updateProductStockAndSetCart}
-        handleQuantityChange={handleQuantityChange} 
-        handleAddProductToCartWithQuantityReset={handleAddProductToCartWithQuantityReset}
+        handleQuantityChange={handleQuantityChange}
+        handleAddProductToCartWithQuantityReset={
+          handleAddProductToCartWithQuantityReset
+        }
         quantite={quantite}
         toggler={toggler}
         showPanierPanneau={showPanierPanneau}

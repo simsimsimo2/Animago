@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useCart } from '/components/AchatPanier/UseCart.jsx';
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 import MainTouteComponentPanier from '/components/AchatPanier/PanierPanneauDroit/MainTouteComponentPanier';
 import styles from '/styles/Header.module.css';
 import UpdateProductStockAndSetCart from '/components/ProduitBindingPanier/UpdateProductStockAndSetCart/UpdateProductStockAndSetCart';
@@ -15,13 +15,13 @@ export default function PanierPanneau({
   removeFromCart,
   setCart,
   getPurchaseQuantity,
-  getRemainingStock
+  getRemainingStock,
 }) {
-//  const [cart, initCart, addToCart, removeFromCart, setCart, getPurchaseQuantity, getRemainingStock ] = useCart();
+  //  const [cart, initCart, addToCart, removeFromCart, setCart, getPurchaseQuantity, getRemainingStock ] = useCart();
   const router = useRouter();
   const [orders, setOrders] = useState([]);
   const [totalPriceInCart, setTotalPriceInCart] = useState(0);
-/*
+  /*
   useEffect(() => {
     initCart();
   }, []);
@@ -32,11 +32,17 @@ export default function PanierPanneau({
 
   useEffect(() => {
     if (orders.length > 0) {
-    toast.success(`${
-      `      Merci d'avoir acheté chez Animago ! Nous apprécions votre confiance en nos produits et services.
+      toast.success(
+        `${`      Merci d'avoir acheté chez Animago ! Nous apprécions votre confiance en nos produits et services.
       Votre commande a bien été prise en compte et le montant total de votre achat est de $${totalPriceInCart}.
-      Nous espérons que vous êtes satisfait de votre achat et nous espérons vous revoir bientôt chez Animago pour de nouveaux achats.`
-      }`,{ hideProgressBar: true, autoClose: 3500, type: 'success' ,position:'top-center' });
+      Nous espérons que vous êtes satisfait de votre achat et nous espérons vous revoir bientôt chez Animago pour de nouveaux achats.`}`,
+        {
+          hideProgressBar: true,
+          autoClose: 3500,
+          type: 'success',
+          position: 'top-center',
+        }
+      );
       setCart([]);
       setOrders([]);
       router.push({
@@ -53,14 +59,24 @@ export default function PanierPanneau({
       if (itemIndex !== -1) {
         const updatedItem = {
           ...updatedCart[itemIndex],
-          purchaseQuantity: Math.max(Math.min(parseInt(value, 10), updatedCart[itemIndex]?.stock || getPurchaseQuantity(item._id)), 0),
+          purchaseQuantity: Math.max(
+            Math.min(
+              parseInt(value, 10),
+              updatedCart[itemIndex]?.stock || getPurchaseQuantity(item._id)
+            ),
+            0
+          ),
         };
-        const newCart = [        ...updatedCart.slice(0, itemIndex),        updatedItem,        ...updatedCart.slice(itemIndex + 1),      ];
+        const newCart = [
+          ...updatedCart.slice(0, itemIndex),
+          updatedItem,
+          ...updatedCart.slice(itemIndex + 1),
+        ];
         setCart(newCart);
       }
     }
   };
-  
+
   const calcTotal = () => {
     let sum = 0;
     if (cart) {
@@ -72,13 +88,21 @@ export default function PanierPanneau({
     }
     setTotalPriceInCart(parseFloat(sum.toFixed(2)));
   };
-  
+
   const submitCheckout = async () => {
     if (totalPriceInCart <= 0) {
-      toast.warning("Votre panier est actuellement vide. Pour pouvoir effectuer une commande, veuillez ajouter des produits à votre panier.",{ hideProgressBar: true, autoClose: 2000, type: 'warning' ,position:'bottom-right' });
+      toast.warning(
+        'Votre panier est actuellement vide. Pour pouvoir effectuer une commande, veuillez ajouter des produits à votre panier.',
+        {
+          hideProgressBar: true,
+          autoClose: 2000,
+          type: 'warning',
+          position: 'bottom-right',
+        }
+      );
       return;
     }
-  
+
     const productIds = [];
     cart.forEach((item) => {
       for (let i = 0; i < Number.isInteger(item.purchaseQuantity); i++) {
@@ -87,11 +111,11 @@ export default function PanierPanneau({
     });
     setOrders([...orders, cart]);
   };
-  
+
   return (
     <>
       <div className={`${styles.rightPanel} ${toggler ? 'active' : ''}`}>
-      <MainTouteComponentPanier
+        <MainTouteComponentPanier
           cart={cart}
           handleChange={handleChange}
           removeFromCart={removeFromCart}
@@ -103,8 +127,8 @@ export default function PanierPanneau({
           getRemainingStock={getRemainingStock}
           getPurchaseQuantity={getPurchaseQuantity}
         />
-        </div>
-      </>
+      </div>
+    </>
   );
 }
 

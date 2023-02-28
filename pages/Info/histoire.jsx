@@ -16,12 +16,15 @@ export default function Histoire() {
           <h1 className={styles.titreHistoire}>Notre histoire</h1>
           <div className={styles.histoire}>
             <p>
-              Après plusieurs heures de recherche pour trouver un manque service au niveau de la communauté, nous avons vu
-              que le marché des articles pour animaux, en particulier les livraisons, sont très peu disponible.
+              Après plusieurs heures de recherche pour trouver un manque service
+              au niveau de la communauté, nous avons vu que le marché des
+              articles pour animaux, en particulier les livraisons, sont très
+              peu disponible.
             </p>
             <p>
-              L'équipe AnimaGo! est ravi de montrer leur vision de l'un des meilleurs futurs sites Web d'animaliers sur le
-              marché, qui sera bientot présenté au monde.
+              L'équipe AnimaGo! est ravi de montrer leur vision de l'un des
+              meilleurs futurs sites Web d'animaliers sur le marché, qui sera
+              bientot présenté au monde.
             </p>
           </div>
           <Image
@@ -32,7 +35,7 @@ export default function Histoire() {
           />
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

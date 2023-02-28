@@ -12,13 +12,22 @@ function Gallerie({ images, toggler }) {
         <div key={index} className={styles.container}>
           <Image
             src={imageData.src}
-            alt={imageData.alt || imageData.name ? `${imageData.alt || imageData.name}` : ''}
+            alt={
+              imageData.alt || imageData.name
+                ? `${imageData.alt || imageData.name}`
+                : ''
+            }
             width={imageData.width}
             height={imageData.height}
             priority={true}
           />
           <p className={styles.text}>{imageData.categorie}</p>
-          <button className={styles.button} onClick={() => router.push(imageData.page)}>Achetez maintenant</button>
+          <button
+            className={styles.button}
+            onClick={() => router.push(imageData.page)}
+          >
+            Achetez maintenant
+          </button>
         </div>
       ))}
     </div>

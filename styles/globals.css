@@ -3,10 +3,12 @@ html {
   height: 100%;
   overflow-x: hidden;
 }
-*,*::before,*::after{
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
-main{
+main {
   flex: 1;
 }
 body {
@@ -19,7 +21,7 @@ body {
   font-family: 'Helvetica';
   -webkit-font-smoothing: antialiased;
 }
-header{
+header {
   position: static;
   top: 0;
   left: 0;
