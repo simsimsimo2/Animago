@@ -5,11 +5,11 @@ import Spinner from '/public/img/spinner.gif';
 
 export default function PanierImageLoadingCommande() {
   return (
-      <Image
-          src={Spinner}
-          alt="Attente commande mise a jour"
-          className={styles.imgSpinner}
-          priority={true}
-      />
+    <Image
+      src={Spinner}
+      alt="Attente commande mise a jour"
+      className={styles.imgSpinner}
+      priority={true}
+    />
   );
 }

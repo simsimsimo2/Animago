@@ -20,7 +20,11 @@ export default function Aquatique() {
       {!visibleState && <PanierPanneau toggler={toggler} />}
       <main>
         <h1 className={styles.h1}>Aquatique</h1>
-        <ProduitListe showPanierPanneau={visibleState} toggler={toggler} categorie="aquatique" />
+        <ProduitListe
+          showPanierPanneau={visibleState}
+          toggler={toggler}
+          categorie="aquatique"
+        />
       </main>
       <Footer />
     </>

@@ -13,15 +13,19 @@ export default function Reptile() {
   const toggler = () => {
     setVisible(!visibleState);
   };
-  return(
-  <>
-    <Header />
-    {!visibleState && <PanierPanneau toggler={toggler} />}
-    <main>
+  return (
+    <>
+      <Header />
+      {!visibleState && <PanierPanneau toggler={toggler} />}
+      <main>
         <h1 className={styles.h1}>Reptiles</h1>
-        <ProduitListe showPanierPanneau={visibleState} toggler={toggler}  categorie="reptile"/>
+        <ProduitListe
+          showPanierPanneau={visibleState}
+          toggler={toggler}
+          categorie="reptile"
+        />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

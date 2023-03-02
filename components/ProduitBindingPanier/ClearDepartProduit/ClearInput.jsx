@@ -23,7 +23,12 @@ const ClearInput = ({ item, handleChange, cart, setCart }) => {
   };
 
   return (
-    <button className={styles.buttonClear} onClick={() => clearInputAndStock(item)}>Clear</button>
+    <button
+      className={styles.buttonClear}
+      onClick={() => clearInputAndStock(item)}
+    >
+      Clear
+    </button>
   );
 };
 

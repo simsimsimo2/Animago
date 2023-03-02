@@ -9,15 +9,18 @@ const PanierPanneauFooter = ({ router }) => {
 
   return (
     <div className={styles.footer}>
-      <button className={styles.boutonVoirCommande} onClick={handleViewCartClick}>
-      Historique commandes
+      <button
+        className={styles.boutonVoirCommande}
+        onClick={handleViewCartClick}
+      >
+        Historique commandes
       </button>
     </div>
   );
 };
 
 PanierPanneauFooter.propTypes = {
-  router: PropTypes.object.isRequired
+  router: PropTypes.object.isRequired,
 };
 
 export default PanierPanneauFooter;

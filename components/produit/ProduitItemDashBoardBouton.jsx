@@ -14,7 +14,7 @@ export default function ProduitItemDashBoardBouton({
   handleAddProductToCartWithQuantityReset,
   quantite,
   addToCart,
-  getPurchaseQuantity
+  getPurchaseQuantity,
 }) {
   const { _id, name, price } = product || {};
 
@@ -34,7 +34,9 @@ export default function ProduitItemDashBoardBouton({
         depart={depart}
         product={product}
         onQuantityChange={handleQuantityChange}
-        handleAddProductToCartWithQuantityReset={handleAddProductToCartWithQuantityReset}
+        handleAddProductToCartWithQuantityReset={
+          handleAddProductToCartWithQuantityReset
+        }
         quantite={quantite}
         addToCart={addToCart}
         getPurchaseQuantity={getPurchaseQuantity}
@@ -42,7 +44,9 @@ export default function ProduitItemDashBoardBouton({
       <ProduitItemBtnAjouterPanier
         product={product}
         handleCartUpdateWithDepart={handleCartUpdateWithDepart}
-        handleAddProductToCartWithQuantityReset={handleAddProductToCartWithQuantityReset}
+        handleAddProductToCartWithQuantityReset={
+          handleAddProductToCartWithQuantityReset
+        }
         toggler={toggler}
         showPanierPanneau={showPanierPanneau}
         quantite={quantite}

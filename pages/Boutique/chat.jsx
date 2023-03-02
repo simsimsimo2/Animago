@@ -1,6 +1,6 @@
-import { Inter } from '@next/font/google'
+import { Inter } from '@next/font/google';
 import React, { useState } from 'react';
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ProduitListe from '../../components/produit/ProduitListe';
@@ -18,9 +18,13 @@ export default function Chat() {
       {!visibleState && <PanierPanneau toggler={toggler} />}
       <main>
         <h1 className={styles.h1}>Chats</h1>
-        <ProduitListe showPanierPanneau={visibleState}  toggler={toggler} categorie="chat"/>
+        <ProduitListe
+          showPanierPanneau={visibleState}
+          toggler={toggler}
+          categorie="chat"
+        />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

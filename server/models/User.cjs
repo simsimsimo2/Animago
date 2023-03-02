@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Commande = require("./Commande1.cjs");
+const mongoose = require('mongoose');
+const Commande = require('./Commande1.cjs');
 
 const userSchema = new mongoose.Schema({
   courriel: { type: String, required: true, unique: true },
@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   commandes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Commande",
+      ref: 'Commande',
     },
   ],
 });
@@ -17,9 +17,9 @@ const userSchema = new mongoose.Schema({
 let User;
 
 try {
-  User = mongoose.model("User");
+  User = mongoose.model('User');
 } catch (error) {
-  User = mongoose.model("User", userSchema);
+  User = mongoose.model('User', userSchema);
 }
 
 module.exports = User;

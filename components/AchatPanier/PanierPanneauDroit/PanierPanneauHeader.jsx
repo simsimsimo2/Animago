@@ -10,7 +10,7 @@ function PanierPanneauHeader({ toggler }) {
       <button className={`${styles.bouton}`} onClick={toggler}>
         <Image
           src={CloseIcon}
-          alt={"fermer panier" || 'Default Image'}
+          alt={'fermer panier' || 'Default Image'}
           priority={true}
           className={styles.closeIcon}
         />
@@ -21,7 +21,7 @@ function PanierPanneauHeader({ toggler }) {
 }
 
 PanierPanneauHeader.propTypes = {
-  router: PropTypes.object
+  router: PropTypes.object,
 };
 
 export default PanierPanneauHeader;

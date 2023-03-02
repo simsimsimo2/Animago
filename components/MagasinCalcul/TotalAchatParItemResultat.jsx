@@ -14,8 +14,6 @@ export default function TotalAchatParItemResultat({ cart }) {
     }
     setTotal(sum.toFixed(2));
   }, [cart]);
-  
 
   return isNaN(total) ? '0.00' : Number(total).toFixed(2);
-
 }

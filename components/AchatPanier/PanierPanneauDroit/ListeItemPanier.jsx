@@ -16,7 +16,7 @@ export default function ListeItemPanier(props) {
     submitCheckout,
     getRemainingStock,
     getPurchaseQuantity,
-    setCart
+    setCart,
   } = props;
 
   return (
@@ -30,10 +30,16 @@ export default function ListeItemPanier(props) {
         removeFromCart={removeFromCart}
         setCart={setCart}
       />
-      <GrandTotalMontantResultat total={<TotalAchatParItemResultat cart={cart} />} />
+      <GrandTotalMontantResultat
+        total={<TotalAchatParItemResultat cart={cart} />}
+      />
       <div>
         <GrandTotalItemResultat calculateTotal={calculateTotal} />
-        <CheckoutBtn submitCheckout={submitCheckout} calculateTotal={calculateTotal} total={<TotalAchatParItemResultat cart={cart} />} />
+        <CheckoutBtn
+          submitCheckout={submitCheckout}
+          calculateTotal={calculateTotal}
+          total={<TotalAchatParItemResultat cart={cart} />}
+        />
       </div>
     </>
   );

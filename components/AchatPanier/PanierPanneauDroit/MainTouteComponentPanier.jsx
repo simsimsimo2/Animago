@@ -16,11 +16,14 @@ const MainTouteComponentPanier = ({
   toggler,
   getRemainingStock,
   getPurchaseQuantity,
-  setCart
+  setCart,
 }) => {
   return (
     <Toggler visible>
-      <div className={styles.containerZindex} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={styles.containerZindex}
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className={styles.cart}>
           <PanierPanneauHeader toggler={toggler} />
           <MainContenuPanneauPanier
@@ -37,7 +40,7 @@ const MainTouteComponentPanier = ({
         </div>
         <PanierPanneauFooter router={router} />
       </div>
-      </Toggler>    
+    </Toggler>
   );
 };
 

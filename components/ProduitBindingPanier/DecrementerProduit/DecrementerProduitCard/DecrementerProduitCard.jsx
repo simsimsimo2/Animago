@@ -2,7 +2,12 @@ import React from 'react';
 import styles from '/styles/AjouterEnleverPanier.module.css';
 import { useCart } from '/components/AchatPanier/UseCart.jsx';
 
-const DecrementerProduitCarte = ({ product, onQuantityChange, quantite, addToCart }) => {
+const DecrementerProduitCarte = ({
+  product,
+  onQuantityChange,
+  quantite,
+  addToCart,
+}) => {
   const [, , , setCart] = useCart([]);
 
   const decrementer = () => {
